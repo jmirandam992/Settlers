@@ -1,0 +1,21 @@
+c:\users\rogue\documents\visual studio 2015\Projects\SOCForm\bin\Debug\SOCForm.exe.config
+c:\users\rogue\documents\visual studio 2015\Projects\SOCForm\bin\Debug\SOCForm.exe
+c:\users\rogue\documents\visual studio 2015\Projects\SOCForm\bin\Debug\SOCForm.pdb
+c:\users\rogue\documents\visual studio 2015\Projects\SOCForm\obj\Debug\SOCForm.csprojResolveAssemblyReference.cache
+c:\users\rogue\documents\visual studio 2015\Projects\SOCForm\obj\Debug\SOCForm.Form1.resources
+c:\users\rogue\documents\visual studio 2015\Projects\SOCForm\obj\Debug\SOCForm.Properties.Resources.resources
+c:\users\rogue\documents\visual studio 2015\Projects\SOCForm\obj\Debug\SOCForm.csproj.GenerateResource.Cache
+c:\users\rogue\documents\visual studio 2015\Projects\SOCForm\obj\Debug\SOCForm.exe
+c:\users\rogue\documents\visual studio 2015\Projects\SOCForm\obj\Debug\SOCForm.pdb
+C:\Users\Rodney\Desktop\SOCForm\bin\Debug\SOCForm.exe.config
+C:\Users\Rodney\Desktop\SOCForm\obj\Debug\SOCForm.exe
+C:\Users\Rodney\Desktop\SOCForm\obj\Debug\SOCForm.pdb
+C:\Users\Rodney\Desktop\SOCForm\bin\Debug\SOCForm.exe
+C:\Users\Rodney\Desktop\SOCForm\bin\Debug\SOCForm.pdb
+C:\Users\Rodney\Desktop\SOCForm\obj\Debug\SOCForm.csprojResolveAssemblyReference.cache
+C:\Users\Rodney\Desktop\SOCForm\obj\Debug\SOCForm.Form1.resources
+C:\Users\Rodney\Desktop\SOCForm\obj\Debug\SOCForm.Properties.Resources.resources
+C:\Users\Rodney\Desktop\SOCForm\obj\Debug\SOCForm.csproj.GenerateResource.Cache
+D:\SOCForm\bin\Debug\SOCForm.exe.config
+D:\SOCForm\obj\Debug\SOCForm.exe
+D:\SOCForm\obj\Debug\SOCForm.pdb
