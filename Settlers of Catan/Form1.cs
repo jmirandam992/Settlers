@@ -20,6 +20,11 @@ namespace SOCForm
             InitializeComponent();
         }
 
+        public Form1(int PlayerCnt)
+        {
+
+        }
+
         private void picGrid_Click(object sender, EventArgs e)
         {
 
