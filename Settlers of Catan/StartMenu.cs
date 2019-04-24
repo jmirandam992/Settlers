@@ -19,7 +19,7 @@ namespace SOCForm
 
         private void startGameBtn_Click(object sender, EventArgs e)
         {
-            StartMenu s = new StartMenu();
+            MapSelect s = new MapSelect();
             s.Show();
             this.Visible = false;
 

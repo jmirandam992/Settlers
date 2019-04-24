@@ -12,16 +12,33 @@
     using System.Windows.Forms;
     class Generation
     {
-        private void GenerateRandom(object sender, PaintEventArgs e)
+        public void Standard(List<PictureBox> background, Hexagon[] grid)
         {
-            /*
-            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-
-            // Draw the selected hexagons.
-            foreach (PointF point in Hexagons)
+            for (int i = 0; i < grid.Length; i++)
             {
-                e.Graphics.FillPolygon(Brushes.LightBlue,
-                    HexToPoints(HexHeight, point.X, point.Y));*/
+                Hexagon thisHex = grid[i];
+                if (thisHex.Layer > 0)
+                {
+                    int reference = i - thisHex.FirstTouchingCnt;
+                    Hexagon referenceHex = grid[reference];
+                    PictureBox thisPic = background[i];
+                    PictureBox referencePic = background[reference];
+                    if (thisHex.Touching == "both")
+                    {
+                        PictureBox preRefPic = background[reference - 1];
+                        preRefPic.Controls.Add(thisPic);
+                        referencePic.Controls.Add(thisPic);
+                    }
+                    if (thisHex.Touching == "left")
+                    {
+                        referencePic.Controls.Add(thisPic);
+                    }
+                    if (thisHex.Touching == "right")
+                    {
+                        referencePic.Controls.Add(thisPic);
+                    }
+                }
+            }
         }
     }
 }
