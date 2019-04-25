@@ -23,3 +23,17 @@ C:\Users\22623258\Downloads\Settlers-master\CATAN_NEW_HEXGEN\Settlers of Catan\o
 C:\Users\22623258\Downloads\Settlers-master\CATAN_NEW_HEXGEN\Settlers of Catan\obj\Debug\SOCForm.MapSelect.resources
 C:\Users\22623258\Downloads\Settlers-master\CATAN_NEW_HEXGEN\Settlers of Catan\obj\Debug\SOCForm.Rules.resources
 C:\Users\22623258\Downloads\Settlers-master\CATAN_NEW_HEXGEN\Settlers of Catan\obj\Debug\SOCForm.StartMenu.resources
+C:\Users\22623258\Desktop\Settlers of Catan\bin\Debug\SOCForm.exe.config
+C:\Users\22623258\Desktop\Settlers of Catan\obj\Debug\SOCForm.exe
+C:\Users\22623258\Desktop\Settlers of Catan\obj\Debug\SOCForm.pdb
+C:\Users\22623258\Desktop\Settlers of Catan\bin\Debug\Classes\soc.mdf
+C:\Users\22623258\Desktop\Settlers of Catan\bin\Debug\Classes\soc_log.ldf
+C:\Users\22623258\Desktop\Settlers of Catan\bin\Debug\SOCForm.exe
+C:\Users\22623258\Desktop\Settlers of Catan\bin\Debug\SOCForm.pdb
+C:\Users\22623258\Desktop\Settlers of Catan\obj\Debug\SettlersofCatan.csprojResolveAssemblyReference.cache
+C:\Users\22623258\Desktop\Settlers of Catan\obj\Debug\SOCForm.Form1.resources
+C:\Users\22623258\Desktop\Settlers of Catan\obj\Debug\SOCForm.MapSelect.resources
+C:\Users\22623258\Desktop\Settlers of Catan\obj\Debug\SOCForm.Properties.Resources.resources
+C:\Users\22623258\Desktop\Settlers of Catan\obj\Debug\SOCForm.Rules.resources
+C:\Users\22623258\Desktop\Settlers of Catan\obj\Debug\SOCForm.StartMenu.resources
+C:\Users\22623258\Desktop\Settlers of Catan\obj\Debug\SettlersofCatan.csproj.GenerateResource.Cache

@@ -61,10 +61,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ButtonManager.cs" />
     <Compile Include="Classes\Generator.cs" />
     <Compile Include="Classes\Graphics.cs" />
     <Compile Include="Classes\Hexagon.cs" />
     <Compile Include="Classes\Maps.cs" />
+    <Compile Include="Classes\PiecePlacement.cs" />
+    <Compile Include="Classes\Pieces.cs" />
     <Compile Include="Classes\ScrollablePanel.cs" />
     <Compile Include="Classes\Tile.cs" />
     <Compile Include="Classes\world.cs" />
