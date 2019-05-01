@@ -72,6 +72,8 @@ namespace SOCForm
         // A new instance of generation for pieces.
         private PiecePlacement place;
 
+        private int rollValue;
+
         public void Generate()
         {
             Point newLoc = new Point(5, 5); // Set whatever you want for initial location
@@ -127,7 +129,7 @@ namespace SOCForm
 
         private void diceRollBtn_Click(object sender, EventArgs e)
         {
-            dice.RollDie(dieP1, dieP2);
+            rollValue = dice.RollDie(dieP1, dieP2);
         }
 
         
