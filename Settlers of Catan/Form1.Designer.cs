@@ -31,6 +31,9 @@ namespace SOCForm
         private void InitializeComponent()
         {
             this.tradePanel = new System.Windows.Forms.Panel();
+            this.dieP2 = new System.Windows.Forms.PictureBox();
+            this.dieP1 = new System.Windows.Forms.PictureBox();
+            this.diceRollBtn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -66,12 +69,9 @@ namespace SOCForm
             this.acceptButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.diceRollBtn = new System.Windows.Forms.Button();
-            this.dieP1 = new System.Windows.Forms.PictureBox();
-            this.dieP2 = new System.Windows.Forms.PictureBox();
             this.tradePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dieP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieP2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dieP1)).BeginInit();
             this.SuspendLayout();
             // 
             // tradePanel
@@ -116,16 +116,42 @@ namespace SOCForm
             this.tradePanel.Controls.Add(this.button1);
             this.tradePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.tradePanel.Location = new System.Drawing.Point(0, 0);
-            this.tradePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tradePanel.Margin = new System.Windows.Forms.Padding(2);
             this.tradePanel.Name = "tradePanel";
             this.tradePanel.Size = new System.Drawing.Size(381, 664);
             this.tradePanel.TabIndex = 1;
             this.tradePanel.Visible = false;
             // 
+            // dieP2
+            // 
+            this.dieP2.Location = new System.Drawing.Point(191, 452);
+            this.dieP2.Name = "dieP2";
+            this.dieP2.Size = new System.Drawing.Size(100, 100);
+            this.dieP2.TabIndex = 37;
+            this.dieP2.TabStop = false;
+            // 
+            // dieP1
+            // 
+            this.dieP1.Location = new System.Drawing.Point(72, 452);
+            this.dieP1.Name = "dieP1";
+            this.dieP1.Size = new System.Drawing.Size(100, 100);
+            this.dieP1.TabIndex = 36;
+            this.dieP1.TabStop = false;
+            // 
+            // diceRollBtn
+            // 
+            this.diceRollBtn.Location = new System.Drawing.Point(141, 558);
+            this.diceRollBtn.Name = "diceRollBtn";
+            this.diceRollBtn.Size = new System.Drawing.Size(75, 23);
+            this.diceRollBtn.TabIndex = 35;
+            this.diceRollBtn.Text = "Roll Dice";
+            this.diceRollBtn.UseVisualStyleBackColor = true;
+            this.diceRollBtn.Click += new System.EventHandler(this.diceRollBtn_Click);
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(323, 123);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(25, 20);
             this.textBox1.TabIndex = 33;
@@ -133,7 +159,7 @@ namespace SOCForm
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(323, 157);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(25, 20);
             this.textBox2.TabIndex = 32;
@@ -141,7 +167,7 @@ namespace SOCForm
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(323, 189);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(25, 20);
             this.textBox3.TabIndex = 31;
@@ -149,7 +175,7 @@ namespace SOCForm
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(323, 225);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(25, 20);
             this.textBox4.TabIndex = 30;
@@ -157,7 +183,7 @@ namespace SOCForm
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(323, 88);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(25, 20);
             this.textBox5.TabIndex = 29;
@@ -275,7 +301,7 @@ namespace SOCForm
             // traderBrickOffer
             // 
             this.traderBrickOffer.Location = new System.Drawing.Point(19, 125);
-            this.traderBrickOffer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.traderBrickOffer.Margin = new System.Windows.Forms.Padding(2);
             this.traderBrickOffer.Name = "traderBrickOffer";
             this.traderBrickOffer.Size = new System.Drawing.Size(25, 20);
             this.traderBrickOffer.TabIndex = 18;
@@ -283,7 +309,7 @@ namespace SOCForm
             // traderWoolOffer
             // 
             this.traderWoolOffer.Location = new System.Drawing.Point(19, 159);
-            this.traderWoolOffer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.traderWoolOffer.Margin = new System.Windows.Forms.Padding(2);
             this.traderWoolOffer.Name = "traderWoolOffer";
             this.traderWoolOffer.Size = new System.Drawing.Size(25, 20);
             this.traderWoolOffer.TabIndex = 17;
@@ -291,7 +317,7 @@ namespace SOCForm
             // traderOreOffer
             // 
             this.traderOreOffer.Location = new System.Drawing.Point(19, 191);
-            this.traderOreOffer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.traderOreOffer.Margin = new System.Windows.Forms.Padding(2);
             this.traderOreOffer.Name = "traderOreOffer";
             this.traderOreOffer.Size = new System.Drawing.Size(25, 20);
             this.traderOreOffer.TabIndex = 16;
@@ -299,7 +325,7 @@ namespace SOCForm
             // traderGrainOffer
             // 
             this.traderGrainOffer.Location = new System.Drawing.Point(19, 227);
-            this.traderGrainOffer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.traderGrainOffer.Margin = new System.Windows.Forms.Padding(2);
             this.traderGrainOffer.Name = "traderGrainOffer";
             this.traderGrainOffer.Size = new System.Drawing.Size(25, 20);
             this.traderGrainOffer.TabIndex = 15;
@@ -307,7 +333,7 @@ namespace SOCForm
             // traderLumbOffer
             // 
             this.traderLumbOffer.Location = new System.Drawing.Point(19, 90);
-            this.traderLumbOffer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.traderLumbOffer.Margin = new System.Windows.Forms.Padding(2);
             this.traderLumbOffer.Name = "traderLumbOffer";
             this.traderLumbOffer.Size = new System.Drawing.Size(25, 20);
             this.traderLumbOffer.TabIndex = 14;
@@ -447,7 +473,7 @@ namespace SOCForm
             // acceptButton
             // 
             this.acceptButton.Location = new System.Drawing.Point(251, 332);
-            this.acceptButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.acceptButton.Margin = new System.Windows.Forms.Padding(2);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(50, 23);
             this.acceptButton.TabIndex = 1;
@@ -457,7 +483,7 @@ namespace SOCForm
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(65, 332);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 23);
             this.button1.TabIndex = 0;
@@ -474,32 +500,6 @@ namespace SOCForm
             this.label7.TabIndex = 34;
             this.label7.Text = "Trade Menu";
             this.label7.MouseHover += new System.EventHandler(this.label7_MouseHover);
-            // 
-            // diceRollBtn
-            // 
-            this.diceRollBtn.Location = new System.Drawing.Point(141, 558);
-            this.diceRollBtn.Name = "diceRollBtn";
-            this.diceRollBtn.Size = new System.Drawing.Size(75, 23);
-            this.diceRollBtn.TabIndex = 35;
-            this.diceRollBtn.Text = "Roll Dice";
-            this.diceRollBtn.UseVisualStyleBackColor = true;
-            this.diceRollBtn.Click += new System.EventHandler(this.diceRollBtn_Click);
-            // 
-            // dieP1
-            // 
-            this.dieP1.Location = new System.Drawing.Point(72, 452);
-            this.dieP1.Name = "dieP1";
-            this.dieP1.Size = new System.Drawing.Size(100, 100);
-            this.dieP1.TabIndex = 36;
-            this.dieP1.TabStop = false;
-            // 
-            // dieP2
-            // 
-            this.dieP2.Location = new System.Drawing.Point(191, 452);
-            this.dieP2.Name = "dieP2";
-            this.dieP2.Size = new System.Drawing.Size(100, 100);
-            this.dieP2.TabIndex = 37;
-            this.dieP2.TabStop = false;
             // 
             // Form1
             // 
@@ -519,8 +519,8 @@ namespace SOCForm
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.tradePanel.ResumeLayout(false);
             this.tradePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dieP1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieP2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dieP1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

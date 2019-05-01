@@ -43,11 +43,11 @@ namespace SOCForm.Classes
         ///// </summary>
         public Random r;
 
-        public void RollDie(PictureBox d1, PictureBox d2)
+        public int RollDie(PictureBox d1, PictureBox d2)
         {
             //    //declared new random
             r = new Random();
-
+            int total;
             //    //set randoms
             die1 = r.Next(0, 6);
             die2 = r.Next(0, 6);
@@ -108,7 +108,10 @@ namespace SOCForm.Classes
                     break;
             }
 
-            }
+            total = die1 + die2;
+            return total;
+
+        }
      
         }
     }
