@@ -78,15 +78,6 @@ namespace SOCForm
 
         public void Generate()
         {
-            Point newLoc = new Point(5, 5); // Set whatever you want for initial location
-
-            Button b = new Button();
-            b.Size = new Size(10, 50);
-            b.Location = newLoc;
-            newLoc.Offset(0, b.Height + 5);
-            b.BackColor = Color.Red;
-            Controls.Add(b);
-
 
             // Fills all the information needed to generate a grid.
             Gameboard.Standard(Grid);
@@ -95,9 +86,17 @@ namespace SOCForm
             Gen.Standard(this, background, Grid);
 
             // Places pieces.
-            // place.Towns(this, Grid, 0, 5);
 
-            btnManage.genAllBtn(this, Grid);
+            for (int i = 0; i < Grid.Length; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    place.Town(this, Grid, i, j);
+                    place.Road(this, Grid, i, j);
+                }
+            }
+
+            btnManage.genAllBtn(this, Grid, place);
 
         }
 

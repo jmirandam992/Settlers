@@ -14,22 +14,50 @@ namespace SOCForm.Classes
         {
             btnHalf = btnSize / 2;
         }
-        public int hexSize; 
+        public int hexSize;
         private int btnSize = 30;
         private int btnHalf;
+        private int townSize = 84;
+        private int roadWidth = 66;
+        private int roadHeight = 68;
+        private int roadWidth3 = 36;
+        private int roadHeight3 = 62;
+        private int shift = 9;
+        private PiecePlacement place;
         private Color btnColor = Color.Red;
 
-        public void genAllBtn(Form1 form, Hexagon[] Grid)
+        public void genAllBtn(Form1 form, Hexagon[] Grid, PiecePlacement Place)
         {
+            place = Place;
             for (int i = 0; i < Grid.Length; i++)
             {
                 for (int j = 0; j < 6; j++)
                 {
-                    this.TownBtnLcn(form, Grid, i, j);
+                    if (i > 2)
+                    {
+                        if (j != 0 || j != 1 || j != 5)
+                        {
+                            this.TownBtnLcn(form, Grid, i, j);
+                        }
+                    }
+                    else
+                    {
+                        this.TownBtnLcn(form, Grid, i, j);
+                    }
                 }
                 for (int j = 0; j < 6; j++)
                 {
-                    this.RoadBtnLcn(form, Grid, i, j);
+                    if (i > 2)
+                    {
+                        if (j != 0 || j != 1 || j != 5)
+                        {
+                            this.RoadBtnLcn(form, Grid, i, j);
+                        }
+                    }
+                    else
+                    {
+                        this.RoadBtnLcn(form, Grid, i, j);
+                    }
                 }
             }
         }
@@ -60,32 +88,31 @@ namespace SOCForm.Classes
                 HouseGen(form, Grid, loc, hexRef, -btnHalf, (hexSize / 4) - btnHalf);
             }
         }
-
-        public void RoadBtnLcn(Form1 form, Hexagon[] Grid, int loc, int hexRef)
+        public void RoadBtnLcn(Form1 form, Hexagon[] Grid, int hexRef, int loc)
         {
             if (loc == 0)
             {
-                RoadGen(form, Grid, loc, hexRef, ((hexSize / 2) + (btnHalf * 3)), btnHalf);
+                RoadGen(form, Grid, loc, hexRef, ((hexSize / 2) + (hexSize / 4) - (btnSize / 2)), btnSize - shift);
             }
             if (loc == 1)
             {
-                RoadGen(form, Grid, loc, hexRef, (hexSize - btnHalf), (hexSize / 4) + 75);
+                RoadGen(form, Grid, loc, hexRef, (hexSize - btnHalf), (hexSize / 2) - btnHalf);
             }
             if (loc == 2)
             {
-                RoadGen(form, Grid, loc, hexRef, (hexSize / 2 + (btnHalf * 3)), (hexSize / 4) + (hexSize / 2) + btnHalf);
+                RoadGen(form, Grid, loc, hexRef, ((hexSize / 2) + (hexSize / 4) - (btnSize / 2)), (hexSize / 2) + (hexSize / 3) - (btnHalf / 3));
             }
             if (loc == 3)
             {
-                RoadGen(form, Grid, loc, hexRef, ((hexSize / 2) - (btnHalf / 2)), (hexSize - 65));
+                RoadGen(form, Grid, loc, hexRef, (hexSize / 4) - (btnSize / 2), (hexSize / 2) + (hexSize / 3) - (btnHalf / 3));
             }
             if (loc == 4)
             {
-                RoadGen(form, Grid, loc, hexRef, -btnHalf, (hexSize / 4) + (hexSize / 2) - 90);
+                RoadGen(form, Grid, loc, hexRef, -btnHalf, (hexSize / 2) - btnHalf);
             }
             if (loc == 5)
             {
-                RoadGen(form, Grid, loc, hexRef, 60, (hexSize / 4) - (btnHalf * 3));
+                RoadGen(form, Grid, loc, hexRef, (hexSize / 4) - (btnSize / 2), btnSize - shift);
             }
         }
         private void HouseGen(Form1 form, Hexagon[] Grid, int loc, int hexRef, int x, int y)

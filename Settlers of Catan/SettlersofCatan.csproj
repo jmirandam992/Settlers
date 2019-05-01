@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\AI.cs" />
+    <Compile Include="Classes\ButtonInfo.cs" />
     <Compile Include="Classes\ButtonManager.cs" />
     <Compile Include="Classes\Dice.cs" />
     <Compile Include="Classes\Generator.cs" />

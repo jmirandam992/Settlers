@@ -16,10 +16,14 @@ namespace SOCForm.Classes
         }
 
         private int hexSize;
-        private int townSize = 30;
-        private int roadSize = 30;
+        private int townSize = 84;
+        private int roadWidth = 66;
+        private int roadHeight = 68;
+        private int roadWidth3 = 36;
+        private int roadHeight3 = 62;
+        private int shift = 5;
 
-        public void Towns(Form1 form, Hexagon[] Grid, int hexRef, int loc)
+        public void Town(Form1 form, Hexagon[] Grid, int hexRef, int loc)
         {
             if (loc == 0)
             {
@@ -27,7 +31,7 @@ namespace SOCForm.Classes
             }
             if (loc == 1)
             {
-                HouseGen(form, Grid, loc, hexRef, (hexSize - (townSize / 2)), (hexSize / 4) - (townSize / 2));
+                HouseGen(form, Grid, loc, hexRef, (hexSize - (townSize / 2)), (hexSize / 4) - (townSize / 2) + shift);
             }
             if (loc == 2)
             {
@@ -35,7 +39,7 @@ namespace SOCForm.Classes
             }
             if (loc == 3)
             {
-                HouseGen(form, Grid, loc, hexRef, ((hexSize / 2) - (townSize / 2)), (hexSize - (townSize / 2)));
+                HouseGen(form, Grid, loc, hexRef, ((hexSize / 2) - (townSize / 2)), (hexSize - (townSize / 2)) + shift);
             }
             if (loc == 4)
             {
@@ -43,60 +47,90 @@ namespace SOCForm.Classes
             }
             if (loc == 5)
             {
-                HouseGen(form, Grid, loc, hexRef, -(townSize / 2), (hexSize / 4) - (townSize / 2));
+                HouseGen(form, Grid, loc, hexRef, -(townSize / 2), (hexSize / 4) - (townSize / 2) + shift);
             }
         }
 
-        public void Roads(Form1 form, Hexagon[] Grid, int loc, int hexRef)
+        public void Road(Form1 form, Hexagon[] Grid, int hexRef, int loc)
         {
             if (loc == 0)
             {
-                RoadGen(form, Grid, loc, hexRef, ((hexSize / 2) + 45), 15);
+                RoadGen(form, Grid, loc, hexRef, ((hexSize / 2) + (hexSize / 7)), (hexSize / 60));
             }
             if (loc == 1)
             {
-                RoadGen(form, Grid, loc, hexRef, (hexSize - 15), (hexSize / 4) + 75);
+                RoadGen(form, Grid, loc, hexRef, (hexSize - (roadWidth3 / 2)), (hexSize / 2) - (roadHeight / 2) + shift);
             }
             if (loc == 2)
             {
-                RoadGen(form, Grid, loc, hexRef, (hexSize / 2 + 45), (hexSize / 4) + (hexSize / 2) + 15);
+                RoadGen(form, Grid, loc, hexRef, ((hexSize / 2) + (hexSize / 7)), (hexSize / 60) + (hexSize / 2) + (hexSize / 4));
             }
             if (loc == 3)
             {
-                RoadGen(form, Grid, loc, hexRef, ((hexSize / 2) - 75), (hexSize - 65));
+                RoadGen(form, Grid, loc, hexRef, ((hexSize / 7)), (hexSize / 60) + (hexSize / 2) + (hexSize / 4));
             }
             if (loc == 4)
             {
-                RoadGen(form, Grid, loc, hexRef, -15, (hexSize / 4) + (hexSize / 2) - 90);
+                RoadGen(form, Grid, loc, hexRef, -roadWidth3 / 2, (hexSize / 2) - (roadHeight / 2) + shift);
             }
             if (loc == 5)
             {
-                RoadGen(form, Grid, loc, hexRef, 60, (hexSize / 4) - 45);
+                RoadGen(form, Grid, loc, hexRef, (hexSize / 7), (hexSize / 60));
             }
         }
 
         private void HouseGen(Form1 form, Hexagon[] Grid, int loc, int hexRef, int x, int y)
         {
+            Image img;
+            if (loc == 0 || loc == 2 || loc == 4)
+            {
+                img = Image.FromFile("Media\\town1.png");
+            }
+            else
+            {
+                img = Image.FromFile("Media\\town2.png");
+            }
             PictureBox house = new PictureBox()
             {
                 Name = "pictureBox",
                 Size = new Size(townSize, townSize),
                 Location = new Point(Grid[hexRef].LocX + x, Grid[hexRef].LocY + y),
-                Image = Image.FromFile("Media\\house.jpg"),
+                Image = img,
                 BackColor = Color.Transparent,
             };
-            
+
             form.Controls.Add(house);
             house.BringToFront();
         }
         private void RoadGen(Form1 form, Hexagon[] Grid, int loc, int hexRef, int x, int y)
         {
+            Image img;
+            int roadW;
+            int roadH;
+            if (loc == 0 || loc == 3)
+            {
+                img = Image.FromFile("Media\\road1.png");
+                roadW = roadWidth;
+                roadH = roadHeight;
+            }
+            else if (loc == 2 || loc == 5)
+            {
+                img = Image.FromFile("Media\\road2.png");
+                roadW = roadWidth;
+                roadH = roadHeight;
+            }
+            else
+            {
+                img = Image.FromFile("Media\\road3.png");
+                roadW = roadWidth3;
+                roadH = roadHeight3;
+            }
             PictureBox road = new PictureBox()
             {
                 Name = "pictureBox",
-                Size = new Size(roadSize, roadSize),
+                Size = new Size(roadW, roadH),
                 Location = new Point(Grid[hexRef].LocX + x, Grid[hexRef].LocY + y),
-                Image = Image.FromFile("Media\\house.jpg"),
+                Image = img,
                 BackColor = Color.Transparent
 
             };
