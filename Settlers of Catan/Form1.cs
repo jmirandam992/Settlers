@@ -103,6 +103,7 @@ namespace SOCForm
         {
 
         }
+       
 
         private void label7_MouseHover(object sender, EventArgs e)
         {
@@ -113,6 +114,11 @@ namespace SOCForm
 
         }
 
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+
+        }
     }
 }
 

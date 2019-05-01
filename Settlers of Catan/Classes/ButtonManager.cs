@@ -100,6 +100,7 @@ namespace SOCForm.Classes
             b.Name = "houseBtn" + hsver.ToString();
             newLoc.Offset(0, b.Height + 5);
             form.Controls.Add(b);
+            hsver++;
             b.BringToFront();
         }
         private void RoadGen(Form1 form, Hexagon[] Grid, int loc, int hexRef, int x, int y)
@@ -114,19 +115,20 @@ namespace SOCForm.Classes
             // newLoc.Offset(0, b.Height + 5);
             form.Controls.Add(b);
             ver++;
+            b.BringToFront();
             
         }
 
-        private void btnClick(object sender, System.EventArgs e)
+        
+
+        private void myButton_Click(object sender, EventArgs e)
         {
-            Button clickedButton = sender as Button;
+            string ButtonName;
 
-            if (clickedButton != null)
-            {
-                clickedButton.BackColor = Color.Yellow;
-                
+            ButtonName = ((Button)sender).Name;
 
-            }
+            //Perform required logic here
+            MessageBox.Show("Test");
         }
     }
 }

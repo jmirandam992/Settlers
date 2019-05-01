@@ -481,6 +481,7 @@ namespace SOCForm
             this.Name = "Form1";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.tradePanel.ResumeLayout(false);
             this.tradePanel.PerformLayout();
             this.ResumeLayout(false);

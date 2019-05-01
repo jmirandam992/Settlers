@@ -28,24 +28,28 @@ namespace SOCForm
         {
             Form1 f1 = new Form1(1);
             f1.Show();
+            this.Close();
         }
 
         private void twoPlayerBtn_Click(object sender, EventArgs e)
         {
             Form1 f1 = new Form1(2);
             f1.Show();
+            this.Close();
         }
 
         private void threePlayerBtn_Click(object sender, EventArgs e)
         {
             Form1 f1 = new Form1(3);
             f1.Show();
+            this.Close();
         }
 
         private void fourPlayerBtn_Click(object sender, EventArgs e)
         {
             Form1 f1 = new Form1(4);
             f1.Show();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)

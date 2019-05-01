@@ -13,18 +13,18 @@ namespace SOCForm
 {
     public partial class Rules : Form
     {
-        public Form mainWindows;
+        public Form startMenu;
 
-        public Rules(Form MainWindows)
+        public Rules(Form StartMenu)
         {
             InitializeComponent();
-            this.mainWindows = MainWindows;
+            this.startMenu = StartMenu;
         }
 
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            this.mainWindows.Visible = true;
+            this.startMenu.Show();
         }
     }
 }
