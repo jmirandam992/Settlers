@@ -11,9 +11,13 @@ namespace SOCForm.Classes
         private int difficulty;//this number will range between 1-10
       
 
+        Dice dice = new Dice();
+        Resource card = new Resource();
 
         private void takeTurn()
         {
+            dice.roll();
+            card.drawCards(15);
 
         }
 

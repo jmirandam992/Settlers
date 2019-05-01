@@ -72,6 +72,7 @@
     <Compile Include="Classes\Pieces.cs" />
     <Compile Include="Classes\Players.cs" />
     <Compile Include="Classes\PlayerTurns.cs" />
+    <Compile Include="Classes\Resource.cs" />
     <Compile Include="Classes\ScrollablePanel.cs" />
     <Compile Include="Classes\Tile.cs" />
     <Compile Include="Classes\Trading.cs" />

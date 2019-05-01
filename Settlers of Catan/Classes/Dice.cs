@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace SOCForm.Classes
 {
-    class Dice
+    public class Dice
     {
+        public Dice()
+        {
 
+        }
+        public void roll()
+        {
+
+        }
         ///// <summary>
         ///// The value for the first die.
         ///// </summary>
