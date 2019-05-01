@@ -19,9 +19,11 @@ namespace SOCForm
 
         private void startGameBtn_Click(object sender, EventArgs e)
         {
-            MapSelect s = new MapSelect();
+            this.Hide();
+            MapSelect s = new MapSelect(this);
             s.Show();
-            this.Visible = false;
+            
+
 
         }
 

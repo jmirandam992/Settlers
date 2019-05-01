@@ -12,9 +12,11 @@ namespace SOCForm
 {
     public partial class MapSelect : Form
     {
-        public MapSelect()
+        public Form startMenu;
+        public MapSelect(Form StartMenu)
         {
             InitializeComponent();
+            this.startMenu = StartMenu;
         }
 
         private void MapSelect_Load(object sender, EventArgs e)
@@ -48,7 +50,9 @@ namespace SOCForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             this.Close();
+            this.startMenu.Show();
             
         }
     }
