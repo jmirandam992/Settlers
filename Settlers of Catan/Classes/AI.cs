@@ -13,11 +13,14 @@ namespace SOCForm.Classes
 
         Dice dice = new Dice();
         Resource card = new Resource();
+        public string item;
+        public int count;
 
         private void takeTurn()
         {
             dice.roll();
             card.drawCards(15);
+            tradeAssessment(difficulty, count, item);
 
         }
 
