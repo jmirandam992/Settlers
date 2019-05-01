@@ -25,6 +25,10 @@ namespace SOCForm
             Gen.hexSize = hexSize;
             btnManage.hexSize = hexSize;
             place = new PiecePlacement(hexSize);
+            Generate();
+            progressBar1.Visible = false;
+            pnlDie1.BackgroundImage = Properties.Resources.one;
+            pnlDie2.BackgroundImage = Properties.Resources.one;
         }
 
         // Checks if the hexagons have been generated.
@@ -41,7 +45,7 @@ namespace SOCForm
 
         // Store the starting location of the first land tile.
         private int startingHex = 300;
-        
+
         // Store the info for the tile pieces.
         public Hexagon[] Grid = new Hexagon[19];
 
@@ -67,12 +71,12 @@ namespace SOCForm
         {
             Point newLoc = new Point(5, 5); // Set whatever you want for initial location
 
-                Button b = new Button();
-                b.Size = new Size(10, 50);
-                b.Location = newLoc;
-                newLoc.Offset(0, b.Height + 5);
-                b.BackColor = Color.Red;
-                Controls.Add(b);
+            Button b = new Button();
+            b.Size = new Size(10, 50);
+            b.Location = newLoc;
+            newLoc.Offset(0, b.Height + 5);
+            b.BackColor = Color.Red;
+            Controls.Add(b);
 
 
             // Fills all the information needed to generate a grid.
@@ -82,15 +86,33 @@ namespace SOCForm
             Gen.Standard(this, background, Grid);
 
             // Places pieces.
-            place.Towns(this, Grid, 0, 5);
+            // place.Towns(this, Grid, 0, 5);
 
             btnManage.genAllBtn(this, Grid);
-            
+
         }
 
-        private void btnGenerate_Click_1(object sender, EventArgs e)
+        //private void btnGenerate_Click_1(object sender, EventArgs e)
+        //{
+        //    Generate();
+        //}
+
+
+
+        private void tradePanelBtn_MouseHover(object sender, EventArgs e)
         {
-            Generate();
+
         }
+
+        private void label7_MouseHover(object sender, EventArgs e)
+        {
+            if (tradePanel.Visible != true)
+            {
+                tradePanel.Show();
+            }
+
+        }
+
     }
 }
+

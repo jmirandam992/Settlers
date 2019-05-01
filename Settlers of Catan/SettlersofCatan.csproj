@@ -61,15 +61,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\AI.cs" />
     <Compile Include="Classes\ButtonManager.cs" />
+    <Compile Include="Classes\Dice.cs" />
     <Compile Include="Classes\Generator.cs" />
     <Compile Include="Classes\Graphics.cs" />
     <Compile Include="Classes\Hexagon.cs" />
     <Compile Include="Classes\Maps.cs" />
     <Compile Include="Classes\PiecePlacement.cs" />
     <Compile Include="Classes\Pieces.cs" />
+    <Compile Include="Classes\Players.cs" />
+    <Compile Include="Classes\PlayerTurns.cs" />
     <Compile Include="Classes\ScrollablePanel.cs" />
     <Compile Include="Classes\Tile.cs" />
+    <Compile Include="Classes\Trading.cs" />
     <Compile Include="Classes\world.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -116,6 +121,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Rules.resx">
       <DependentUpon>Rules.cs</DependentUpon>
@@ -155,6 +161,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>soc.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\two.png" />
+    <None Include="Resources\three.png" />
+    <None Include="Resources\six.png" />
+    <None Include="Resources\one.png" />
+    <None Include="Resources\four.png" />
+    <None Include="Resources\five.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

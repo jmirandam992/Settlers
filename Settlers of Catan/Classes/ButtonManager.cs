@@ -77,7 +77,7 @@ namespace SOCForm.Classes
             }
             if (loc == 3)
             {
-                RoadGen(form, Grid, loc, hexRef, ((hexSize / 2) - 75), (hexSize - 65));
+                RoadGen(form, Grid, loc, hexRef, ((hexSize / 2) - (btnHalf / 2)), (hexSize - 65));
             }
             if (loc == 4)
             {
@@ -90,25 +90,43 @@ namespace SOCForm.Classes
         }
         private void HouseGen(Form1 form, Hexagon[] Grid, int loc, int hexRef, int x, int y)
         {
+            int hsver = 1;
             Point newLoc = new Point(Grid[hexRef].LocX + x, Grid[hexRef].LocY + y); // Set whatever you want for initial location
             Button b = new Button();
             b.Height = btnSize;
             b.Width = btnSize;
             b.Location = newLoc;
             b.BackColor = btnColor;
+            b.Name = "houseBtn" + hsver.ToString();
             newLoc.Offset(0, b.Height + 5);
             form.Controls.Add(b);
             b.BringToFront();
         }
         private void RoadGen(Form1 form, Hexagon[] Grid, int loc, int hexRef, int x, int y)
         {
+            int ver = 1;
             Point newLoc = new Point(Grid[hexRef].LocX + x, Grid[hexRef].LocY + y); // Set whatever you want for initial location
             Button b = new Button();
             b.Size = new Size(btnSize, btnSize);
             b.Location = newLoc;
             b.BackColor = btnColor;
+            b.Name = "roadBtn" + ver.ToString();
             // newLoc.Offset(0, b.Height + 5);
             form.Controls.Add(b);
+            ver++;
+            
+        }
+
+        private void btnClick(object sender, System.EventArgs e)
+        {
+            Button clickedButton = sender as Button;
+
+            if (clickedButton != null)
+            {
+                clickedButton.BackColor = Color.Yellow;
+                
+
+            }
         }
     }
 }
