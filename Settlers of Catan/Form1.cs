@@ -16,8 +16,11 @@ namespace SOCForm
 {
     public partial class Form1 : Form
     {
+       
+
         public Form1(int players)
         {
+            
             InitializeComponent();
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             Gameboard.HexSize = hexSize;
@@ -26,10 +29,12 @@ namespace SOCForm
             btnManage.hexSize = hexSize;
             place = new PiecePlacement(hexSize);
             Generate();
-            progressBar1.Visible = false;
-            pnlDie1.BackgroundImage = Properties.Resources.one;
-            pnlDie2.BackgroundImage = Properties.Resources.one;
+            
+            dieP1.BackgroundImage = Properties.Resources.one;
+            dieP2.BackgroundImage = Properties.Resources.one;
         }
+
+        Dice dice = new Dice();
 
         // Checks if the hexagons have been generated.
         private bool generated = false;
@@ -119,6 +124,13 @@ namespace SOCForm
             Application.Exit();
 
         }
+
+        private void diceRollBtn_Click(object sender, EventArgs e)
+        {
+            dice.RollDie(dieP1, dieP2);
+        }
+
+        
     }
 }
 

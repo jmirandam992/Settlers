@@ -18,7 +18,7 @@ namespace SOCForm.Classes
 
         private void takeTurn()
         {
-            dice.roll();
+           
             card.drawCards(15);
             tradeAssessment(difficulty, count, item);
 
