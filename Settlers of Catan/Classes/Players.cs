@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace SOCForm.Classes
 {
-    class Players
+    public class Players
     {
+        public Players(int Players, int AI)
+        {
+
+
+        }
 
         private bool diceRolled;
 

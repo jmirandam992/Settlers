@@ -77,6 +77,12 @@
     <Compile Include="Classes\Tile.cs" />
     <Compile Include="Classes\Trading.cs" />
     <Compile Include="Classes\world.cs" />
+    <Compile Include="DifficultySelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DifficultySelect.Designer.cs">
+      <DependentUpon>DifficultySelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     <Compile Include="Winscreen.Designer.cs">
       <DependentUpon>Winscreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DifficultySelect.resx">
+      <DependentUpon>DifficultySelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

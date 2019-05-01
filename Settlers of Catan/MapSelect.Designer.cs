@@ -115,7 +115,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MapSelect";
             this.Text = "Settlers of Catan";
-            this.Load += new System.EventHandler(this.MapSelect_Load);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 

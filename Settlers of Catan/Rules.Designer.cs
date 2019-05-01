@@ -33,9 +33,10 @@
             // 
             // backBtn
             // 
-            this.backBtn.Location = new System.Drawing.Point(320, 354);
+            this.backBtn.Location = new System.Drawing.Point(213, 230);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(162, 51);
+            this.backBtn.Size = new System.Drawing.Size(108, 33);
             this.backBtn.TabIndex = 0;
             this.backBtn.Text = "Back";
             this.backBtn.UseVisualStyleBackColor = true;
@@ -43,12 +44,13 @@
             // 
             // Rules
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.backBtn);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Rules";
-            this.Text = "Rules";
+            this.Text = "Settlers of Catan";
             this.ResumeLayout(false);
 
         }

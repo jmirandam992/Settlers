@@ -18,7 +18,7 @@ namespace SOCForm
     {
        
 
-        public Form1(int players)
+        public Form1(int players, int ai, int difficulty)
         {
             
             InitializeComponent();
@@ -35,6 +35,8 @@ namespace SOCForm
         }
 
         Dice dice = new Dice();
+        
+
 
         // Checks if the hexagons have been generated.
         private bool generated = false;
@@ -130,6 +132,7 @@ namespace SOCForm
         private void diceRollBtn_Click(object sender, EventArgs e)
         {
             rollValue = dice.RollDie(dieP1, dieP2);
+
         }
 
         

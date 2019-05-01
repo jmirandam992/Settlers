@@ -19,35 +19,30 @@ namespace SOCForm
             this.startMenu = StartMenu;
         }
 
-        private void MapSelect_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void onePlayerBtn_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1(1);
+            DifficultySelect f1 = new DifficultySelect(this, 1 ,3);
             f1.Show();
             this.Close();
         }
 
         private void twoPlayerBtn_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1(2);
+            DifficultySelect f1 = new DifficultySelect(this, 2, 2);
             f1.Show();
             this.Close();
         }
 
         private void threePlayerBtn_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1(3);
+            DifficultySelect f1 = new DifficultySelect(this, 3, 1);
             f1.Show();
             this.Close();
         }
 
         private void fourPlayerBtn_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1(4);
+            DifficultySelect f1 = new DifficultySelect(this, 4, 0);
             f1.Show();
             this.Close();
         }

@@ -68,3 +68,4 @@ C:\Users\Rodney\Source\Repos\Settlers\Settlers of Catan\obj\Debug\SettlersofCata
 C:\Users\Rodney\Source\Repos\Settlers\Settlers of Catan\obj\Debug\SettlersofCatan.csproj.CoreCompileInputs.cache
 C:\Users\Rodney\Source\Repos\Settlers\Settlers of Catan\obj\Debug\SOCForm.exe
 C:\Users\Rodney\Source\Repos\Settlers\Settlers of Catan\obj\Debug\SOCForm.pdb
+C:\Users\Rodney\source\repos\Settlers\Settlers of Catan\obj\Debug\SOCForm.DifficultySelect.resources
