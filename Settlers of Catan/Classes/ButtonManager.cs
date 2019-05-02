@@ -23,6 +23,9 @@ namespace SOCForm.Classes
         private int roadWidth3 = 36;
         private int roadHeight3 = 62;
         private int shift = 9;
+        int townCnt = 0;
+        int roadCnt = 0;
+        public List<ButtonInfo> Buttons = new List<ButtonInfo>(); 
         private PiecePlacement place;
         private Color btnColor = Color.Red;
 
@@ -117,36 +120,48 @@ namespace SOCForm.Classes
         }
         private void HouseGen(Form1 form, Hexagon[] Grid, int loc, int hexRef, int x, int y)
         {
-            int hsver = 1;
+            ButtonInfo thisBtn = new ButtonInfo(form, Grid, place, false, roadCnt, hexRef, loc);
+            Buttons.Add(thisBtn);
+
             Point newLoc = new Point(Grid[hexRef].LocX + x, Grid[hexRef].LocY + y); // Set whatever you want for initial location
             Button b = new Button();
             b.Height = btnSize;
             b.Width = btnSize;
             b.Location = newLoc;
             b.BackColor = btnColor;
-            b.Name = "houseBtn" + hsver.ToString();
+            b.Tag = townCnt + roadCnt;
+            b.Name = "houseBtn" + townCnt.ToString();
             newLoc.Offset(0, b.Height + 5);
+            b.Click += new EventHandler(this.btnHandeler);
             form.Controls.Add(b);
-            hsver++;
+            townCnt++;
             b.BringToFront();
         }
         private void RoadGen(Form1 form, Hexagon[] Grid, int loc, int hexRef, int x, int y)
         {
-            int ver = 1;
-            Point newLoc = new Point(Grid[hexRef].LocX + x, Grid[hexRef].LocY + y); // Set whatever you want for initial location
+            ButtonInfo thisBtn = new ButtonInfo(form, Grid, place, true, roadCnt, hexRef, loc);
+            Buttons.Add(thisBtn);
+
+            Point newLoc = new Point(Grid[hexRef].LocX + x, Grid[hexRef].LocY + y);
             Button b = new Button();
             b.Size = new Size(btnSize, btnSize);
             b.Location = newLoc;
             b.BackColor = btnColor;
-            b.Name = "roadBtn" + ver.ToString();
-            // newLoc.Offset(0, b.Height + 5);
+            b.Tag = townCnt + roadCnt;
+            b.Name = "roadBtn, " + roadCnt.ToString();
+            newLoc.Offset(0, b.Height + 5);
+            b.Click += new EventHandler(this.btnHandeler);
             form.Controls.Add(b);
-            ver++;
+            roadCnt++;
             b.BringToFront();
             
         }
 
-        
+        private void btnHandeler(object sender, EventArgs e)
+        {
+            Button thisBtn = (Button)sender;
+            Buttons[(int)thisBtn.Tag].click();
+        }
 
         private void myButton_Click(object sender, EventArgs e)
         {
