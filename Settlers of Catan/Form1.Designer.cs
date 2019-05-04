@@ -118,7 +118,7 @@ namespace SOCForm
             this.tradePanel.Location = new System.Drawing.Point(0, 0);
             this.tradePanel.Margin = new System.Windows.Forms.Padding(2);
             this.tradePanel.Name = "tradePanel";
-            this.tradePanel.Size = new System.Drawing.Size(381, 664);
+            this.tradePanel.Size = new System.Drawing.Size(381, 1061);
             this.tradePanel.TabIndex = 1;
             this.tradePanel.Visible = false;
             // 
@@ -494,7 +494,7 @@ namespace SOCForm
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label7.Location = new System.Drawing.Point(381, 651);
+            this.label7.Location = new System.Drawing.Point(381, 1048);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 13);
             this.label7.TabIndex = 34;
@@ -503,18 +503,18 @@ namespace SOCForm
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1101, 664);
+            this.ClientSize = new System.Drawing.Size(3204, 1061);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tradePanel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form1";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.tradePanel.ResumeLayout(false);

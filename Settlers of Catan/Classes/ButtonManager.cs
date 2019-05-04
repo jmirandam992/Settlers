@@ -25,11 +25,18 @@ namespace SOCForm.Classes
         private int shift = 9;
         int townCnt = 0;
         int roadCnt = 0;
-        public List<ButtonInfo> Buttons = new List<ButtonInfo>(); 
+        public int clicks = 0;
+        private List<PictureBox> Background;
+        public List<ButtonInfo> Buttons = new List<ButtonInfo>();
+        public List<Button> townBtns = new List<Button>();
+        public List<Button> roadBtns = new List<Button>();
+        public List<int> disabledBtns = new List<int>();
         private PiecePlacement place;
         private Color btnColor = Color.Red;
+        public List<int> pressedTowns = new List<int>();
+        public List<int> pressedRoads = new List<int>();
 
-        public void genAllBtn(Form1 form, Hexagon[] Grid, PiecePlacement Place)
+        public void genAllBtn(Form1 form, Hexagon[] Grid, List<PictureBox> Background, PiecePlacement Place)
         {
             place = Place;
             for (int i = 0; i < Grid.Length; i++)
@@ -40,12 +47,12 @@ namespace SOCForm.Classes
                     {
                         if (j != 0 || j != 1 || j != 5)
                         {
-                            this.TownBtnLcn(form, Grid, i, j);
+                            this.TownBtnLcn(form, Grid, Background, i, j);
                         }
                     }
                     else
                     {
-                        this.TownBtnLcn(form, Grid, i, j);
+                        this.TownBtnLcn(form, Grid, Background, i, j);
                     }
                 }
                 for (int j = 0; j < 6; j++)
@@ -54,18 +61,24 @@ namespace SOCForm.Classes
                     {
                         if (j != 0 || j != 1 || j != 5)
                         {
-                            this.RoadBtnLcn(form, Grid, i, j);
+                            this.RoadBtnLcn(form, Grid, Background, i, j);
                         }
                     }
                     else
                     {
-                        this.RoadBtnLcn(form, Grid, i, j);
+                        this.RoadBtnLcn(form, Grid, Background, i, j);
                     }
                 }
             }
+            for (int i = 0; i < roadCnt; i++)
+            {
+                roadBtns[i].SendToBack();
+                roadBtns[i].Enabled = false;
+            }
         }
-        public void TownBtnLcn(Form1 form, Hexagon[] Grid, int hexRef, int loc)
+        public void TownBtnLcn(Form1 form, Hexagon[] Grid, List<PictureBox> Background, int hexRef, int loc)
         {
+            this.Background = Background;
             if (loc == 0)
             {
                 HouseGen(form, Grid, loc, hexRef, ((hexSize / 2) - btnHalf), -btnHalf);
@@ -91,8 +104,9 @@ namespace SOCForm.Classes
                 HouseGen(form, Grid, loc, hexRef, -btnHalf, (hexSize / 4) - btnHalf);
             }
         }
-        public void RoadBtnLcn(Form1 form, Hexagon[] Grid, int hexRef, int loc)
+        public void RoadBtnLcn(Form1 form, Hexagon[] Grid, List<PictureBox> Background, int hexRef, int loc)
         {
+            this.Background = Background;
             if (loc == 0)
             {
                 RoadGen(form, Grid, loc, hexRef, ((hexSize / 2) + (hexSize / 4) - (btnSize / 2)), btnSize - shift);
@@ -120,10 +134,10 @@ namespace SOCForm.Classes
         }
         private void HouseGen(Form1 form, Hexagon[] Grid, int loc, int hexRef, int x, int y)
         {
-            ButtonInfo thisBtn = new ButtonInfo(form, Grid, place, false, roadCnt, hexRef, loc);
+            ButtonInfo thisBtn = new ButtonInfo(form, Grid, Background, this, place, false, townCnt, hexRef, loc);
             Buttons.Add(thisBtn);
 
-            Point newLoc = new Point(Grid[hexRef].LocX + x, Grid[hexRef].LocY + y); // Set whatever you want for initial location
+            Point newLoc = new Point(Background[hexRef].Location.X + x, Background[hexRef].Location.Y + y); 
             Button b = new Button();
             b.Height = btnSize;
             b.Width = btnSize;
@@ -133,27 +147,28 @@ namespace SOCForm.Classes
             b.Name = "houseBtn" + townCnt.ToString();
             newLoc.Offset(0, b.Height + 5);
             b.Click += new EventHandler(this.btnHandeler);
-            form.Controls.Add(b);
+            townBtns.Add(b);
+            form.Controls.Add(townBtns[townCnt]);
+            townBtns[townCnt].BringToFront();
             townCnt++;
-            b.BringToFront();
         }
         private void RoadGen(Form1 form, Hexagon[] Grid, int loc, int hexRef, int x, int y)
         {
-            ButtonInfo thisBtn = new ButtonInfo(form, Grid, place, true, roadCnt, hexRef, loc);
+            ButtonInfo thisBtn = new ButtonInfo(form, Grid, Background, this, place, true, roadCnt, hexRef, loc);
             Buttons.Add(thisBtn);
 
-            Point newLoc = new Point(Grid[hexRef].LocX + x, Grid[hexRef].LocY + y);
+            Point newLoc = new Point(Background[hexRef].Location.X + x, Background[hexRef].Location.Y + y);
             Button b = new Button();
             b.Size = new Size(btnSize, btnSize);
             b.Location = newLoc;
             b.BackColor = btnColor;
             b.Tag = townCnt + roadCnt;
             b.Name = "roadBtn, " + roadCnt.ToString();
-            newLoc.Offset(0, b.Height + 5);
             b.Click += new EventHandler(this.btnHandeler);
-            form.Controls.Add(b);
+            roadBtns.Add(b);
+            form.Controls.Add(roadBtns[roadCnt]);
+            roadBtns[roadCnt].BringToFront();
             roadCnt++;
-            b.BringToFront();
             
         }
 
@@ -171,6 +186,26 @@ namespace SOCForm.Classes
 
             //Perform required logic here
             MessageBox.Show("Test");
+        }
+
+        public void click()
+        {
+            clicks++;
+            if (clicks == 2)
+            {
+                for (int i = 0; i < townBtns.Count; i++)
+                {
+                    townBtns[i].SendToBack();
+                    townBtns[i].Enabled = false;
+                }
+                for (int i = 0; i < disabledBtns.Count; i++)
+                {
+                    roadBtns[disabledBtns[i]].BringToFront();
+                    roadBtns[disabledBtns[i]].Enabled = true;
+                }
+            }
+            place.toFront();
+
         }
     }
 }

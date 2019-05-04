@@ -36,8 +36,6 @@ namespace SOCForm
 
         Dice dice = new Dice();
         
-
-
         // Checks if the hexagons have been generated.
         private bool generated = false;
 
@@ -73,7 +71,6 @@ namespace SOCForm
 
         // A new instance of generation for pieces.
         private PiecePlacement place;
-
         private int rollValue;
 
         public void Generate()
@@ -86,7 +83,7 @@ namespace SOCForm
             Gen.Standard(this, background, Grid);
 
             // Places pieces.
-
+            /*
             for (int i = 0; i < Grid.Length; i++)
             {
                 for (int j = 0; j < 6; j++)
@@ -95,16 +92,14 @@ namespace SOCForm
                     place.Road(this, Grid, i, j);
                 }
             }
-
-            btnManage.genAllBtn(this, Grid, place);
-
+            */
+            btnManage.genAllBtn(this, Grid, background, place);
         }
 
         //private void btnGenerate_Click_1(object sender, EventArgs e)
         //{
         //    Generate();
         //}
-
 
 
         private void tradePanelBtn_MouseHover(object sender, EventArgs e)
@@ -114,10 +109,14 @@ namespace SOCForm
        
 
         private void label7_MouseHover(object sender, EventArgs e)
-        {
+        { 
             if (tradePanel.Visible != true)
             {
                 tradePanel.Show();
+            }
+            else
+            {
+                tradePanel.Hide();
             }
 
         }
@@ -133,8 +132,6 @@ namespace SOCForm
             rollValue = dice.RollDie(dieP1, dieP2);
 
         }
-
-        
     }
 }
 

@@ -15,6 +15,7 @@ namespace SOCForm.Classes
             this.hexSize = HexSize;
         }
 
+        private List<PictureBox> Background;
         private int hexSize;
         private int townSize = 84;
         private int roadWidth = 66;
@@ -22,9 +23,11 @@ namespace SOCForm.Classes
         private int roadWidth3 = 36;
         private int roadHeight3 = 62;
         private int shift = 5;
+        private List<PictureBox> pieces = new List<PictureBox>();
 
-        public void Town(Form1 form, Hexagon[] Grid, int hexRef, int loc)
+        public void Town(Form1 form, Hexagon[] Grid, List<PictureBox> Background, int hexRef, int loc)
         {
+            this.Background = Background;
             if (loc == 0)
             {
                 HouseGen(form, Grid, loc, hexRef, ((hexSize / 2) - (townSize / 2)), -(townSize / 2));
@@ -51,8 +54,9 @@ namespace SOCForm.Classes
             }
         }
 
-        public void Road(Form1 form, Hexagon[] Grid, int hexRef, int loc)
+        public void Road(Form1 form, Hexagon[] Grid, List<PictureBox> Background, int hexRef, int loc)
         {
+            this.Background = Background;
             if (loc == 0)
             {
                 RoadGen(form, Grid, loc, hexRef, ((hexSize / 2) + (hexSize / 7)), (hexSize / 60));
@@ -94,11 +98,11 @@ namespace SOCForm.Classes
             {
                 Name = "pictureBox",
                 Size = new Size(townSize, townSize),
-                Location = new Point(Grid[hexRef].LocX + x, Grid[hexRef].LocY + y),
+                Location = new Point(Background[hexRef].Location.X + x, Background[hexRef].Location.Y + y),
                 Image = img,
                 BackColor = Color.Transparent,
             };
-
+            this.pieces.Add(house);
             form.Controls.Add(house);
             house.BringToFront();
         }
@@ -129,13 +133,22 @@ namespace SOCForm.Classes
             {
                 Name = "pictureBox",
                 Size = new Size(roadW, roadH),
-                Location = new Point(Grid[hexRef].LocX + x, Grid[hexRef].LocY + y),
+                Location = new Point(Background[hexRef].Location.X + x, Background[hexRef].Location.Y + y),
                 Image = img,
                 BackColor = Color.Transparent
 
             };
+            this.pieces.Add(road);
             form.Controls.Add(road);
             road.BringToFront();
+        }
+
+        public void toFront()
+        {
+            for (int i = 0; i < pieces.Count; i++)
+            {
+                pieces[i].BringToFront();
+            }
         }
     }
 }
