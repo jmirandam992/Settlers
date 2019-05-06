@@ -69,6 +69,7 @@ namespace SOCForm
             this.acceptButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnTurn = new System.Windows.Forms.Button();
             this.tradePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dieP2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieP1)).BeginInit();
@@ -118,7 +119,7 @@ namespace SOCForm
             this.tradePanel.Location = new System.Drawing.Point(0, 0);
             this.tradePanel.Margin = new System.Windows.Forms.Padding(2);
             this.tradePanel.Name = "tradePanel";
-            this.tradePanel.Size = new System.Drawing.Size(381, 1061);
+            this.tradePanel.Size = new System.Drawing.Size(381, 581);
             this.tradePanel.TabIndex = 1;
             this.tradePanel.Visible = false;
             // 
@@ -494,19 +495,30 @@ namespace SOCForm
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label7.Location = new System.Drawing.Point(381, 1048);
+            this.label7.Location = new System.Drawing.Point(381, 568);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 13);
             this.label7.TabIndex = 34;
             this.label7.Text = "Trade Menu";
             this.label7.MouseHover += new System.EventHandler(this.label7_MouseHover);
             // 
+            // btnTurn
+            // 
+            this.btnTurn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTurn.Location = new System.Drawing.Point(806, 529);
+            this.btnTurn.Name = "btnTurn";
+            this.btnTurn.Size = new System.Drawing.Size(75, 23);
+            this.btnTurn.TabIndex = 35;
+            this.btnTurn.Text = "End Turn";
+            this.btnTurn.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ClientSize = new System.Drawing.Size(3204, 1061);
+            this.ClientSize = new System.Drawing.Size(905, 581);
+            this.Controls.Add(this.btnTurn);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tradePanel);
             this.DoubleBuffered = true;
@@ -568,6 +580,7 @@ namespace SOCForm
         private Button diceRollBtn;
         public PictureBox dieP2;
         public PictureBox dieP1;
+        private Button btnTurn;
     }
 }
 

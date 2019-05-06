@@ -75,25 +75,123 @@ namespace SOCForm.Classes
             }
         }
 
-        // ERROR: Not loading the third road BTN for some reason unless it just loads the first road and not the first two.
         private void linkHex()
         {
             if (!isRoad)
             {
                 if (Location == 0)
                 {
-                    if (Hexscape > 2 && Hexscape < 7)
+                    if ((Hexscape > 2 && Hexscape < 6) || (Hexscape > 15 && Hexscape < 19))
                     {
-                        active(0, Index - 22);
-                        active(Index, Index);
-                        active(Index + 1, Index + 5);
-                        
+                        // 3 Jump-back | Pos 1
+                        active(0, Index - 14);
                     }
-                    
+                    if (Hexscape == 6)
+                    {
+                        // 3 Jump Back | Pos 4
+                        active(0, Index - 23);
+                    }
+                    if (Hexscape == 7 || (Hexscape > 11 && Hexscape < 16))
+                    {
+                        // 3 Jump Back | Pos 1
+                        active(0, Index - 20);
+                    }
+                    if (Hexscape > 7 && Hexscape < 12)
+                    {
+                        // 4 Jump Back | Pos 4
+                        active(0, Index - 29);
+                    }
                 }
                 if (Location == 1)
                 {
-                    active(0, Index + 9);
+                    if (Hexscape != 2 && Hexscape != 6 && Hexscape != 11 && Hexscape != 15 && Hexscape != 18)
+                    {
+                        active(0, Index + 10);
+                    }
+                    else if (Hexscape == 15)
+                    {
+                        // 4 Jump Back | Pos 5
+                        active(0, Index - 23);
+                    }
+                    else if (Hexscape == 18)
+                    {
+                        // 3 Jump Back | Pos 5
+                        active(0, Index - 17);
+                    }
+                }
+                if (Location == 2)
+                {
+                    if (Hexscape != 2 && Hexscape != 6 && Hexscape != 11 && Hexscape != 15 && Hexscape != 18)
+                    {
+                        active(0, Index + 7);
+                    }
+                    else if (Hexscape == 2)
+                    {
+                        // 4 Jump | Pos 2
+                        active(0, Index + 22);
+                    }
+                    else if (Hexscape == 6)
+                    {
+                        // 5 Jump | Pos 2
+                        active(0, Index + 28);
+                    }
+                }
+                if (Location == 3)
+                {
+                    if ((Hexscape >= 0 && Hexscape < 3) || (Hexscape > 12 && Hexscape < 16))
+                    {
+                        // 3 Jump-back | Pos 1
+                        active(0, Index + 16);
+                    }
+                    if ((Hexscape > 2 && Hexscape < 7) || (Hexscape > 7 && Hexscape < 12))
+                    {
+                        // 4 Jump | Pos 1
+                        active(0, Index + 22);
+                    }
+                    if (Hexscape == 7)
+                    {
+                        // 5 Jump | Pos 4
+                        active(0, Index + 31);
+                    }
+                    if (Hexscape == 12)
+                    {
+                        // 4 Jump Back | Pos 4
+                        active(0, Index + 25);
+                    }
+                }
+                if (Location == 4)
+                {
+                    if (Hexscape != 0 && Hexscape != 3 && Hexscape != 7 && Hexscape != 12 && Hexscape != 16)
+                    {
+                        active(0, Index - 8);
+                    }
+                    else if (Hexscape == 0)
+                    {
+                        // 4 Jump | Pos 2
+                        active(0, Index + 19);
+                    }
+                    else if (Hexscape == 3)
+                    {
+                        // 5 Jump | Pos 2
+                        active(0, Index + 25);
+                    }
+                }
+                if (Location == 5)
+                {
+                    if (Hexscape != 0 && Hexscape != 3 && Hexscape != 7 && Hexscape != 12 && Hexscape != 16)
+                    {
+                        active(0, Index - 11);
+                    }
+                    else if (Hexscape == 12)
+                    {
+                        // 4 Jump Back | Pos 3
+                        active(0, Index - 32);
+                    }
+                    else if (Hexscape == 16)
+                    {
+                        // 3 Jump Back | Pos 3
+                        active(0, Index - 26);
+                    }
                 }
             }
         }
