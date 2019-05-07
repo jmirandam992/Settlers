@@ -181,6 +181,7 @@ namespace SOCForm.Classes
         {
             thisHex.Height = HexSize;
             thisHex.Width = HexSize;
+            thisHex.Number = rdm.Next(1, 7);
             rdmNext();
             lastHex = thisHex;
         }
