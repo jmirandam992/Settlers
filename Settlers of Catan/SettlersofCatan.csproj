@@ -49,6 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -64,6 +65,7 @@
     <Compile Include="Classes\AI.cs" />
     <Compile Include="Classes\ButtonInfo.cs" />
     <Compile Include="Classes\ButtonManager.cs" />
+    <Compile Include="Classes\Cards.cs" />
     <Compile Include="Classes\Dice.cs" />
     <Compile Include="Classes\Generator.cs" />
     <Compile Include="Classes\Graphics.cs" />

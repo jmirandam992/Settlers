@@ -11,16 +11,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Graphics = SOCForm.Classes.Graphics;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace SOCForm
 {
     public partial class Form1 : Form
     {
-       
+
 
         public Form1(int players, int ai, int difficulty)
         {
-            
+
             InitializeComponent();
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             Gameboard.HexSize = hexSize;
@@ -29,13 +31,16 @@ namespace SOCForm
             btnManage.hexSize = hexSize;
             place = new PiecePlacement(hexSize);
             Generate();
-            
             dieP1.BackgroundImage = Properties.Resources.one;
             dieP2.BackgroundImage = Properties.Resources.one;
+            Players play = new Players(4);
+            
         }
 
         Dice dice = new Dice();
+
         
+        private int currentPlayer = 1;
         // Checks if the hexagons have been generated.
         private bool generated = false;
 
@@ -69,6 +74,7 @@ namespace SOCForm
         // A class for managing the buttons.
         private ButtonManager btnManage = new ButtonManager();
 
+        //private PlayerTurns turn = new PlayerTurns(this, 1,  "AI");
         // A new instance of generation for pieces.
         private PiecePlacement place;
         private int rollValue;
@@ -102,25 +108,6 @@ namespace SOCForm
         //}
 
 
-        private void tradePanelBtn_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-       
-
-        private void label7_MouseHover(object sender, EventArgs e)
-        { 
-            if (tradePanel.Visible != true)
-            {
-                tradePanel.Show();
-            }
-            else
-            {
-                tradePanel.Hide();
-            }
-
-        }
-
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -131,6 +118,33 @@ namespace SOCForm
         {
             rollValue = dice.RollDie(dieP1, dieP2);
 
+        }
+
+
+        private void playerDataPnlBtn_Click(object sender, EventArgs e)
+        {
+            if (playerData.Visible != true)
+            {
+                playerData.Show();
+            }
+            else
+            {
+                playerData.Hide();
+            }
+        }
+
+        
+
+        private void fillCardData(int PlayerID, Form1 game)
+        {
+           
+           
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            fillCardData(1, this);
         }
     }
 }
