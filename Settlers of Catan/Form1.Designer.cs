@@ -59,11 +59,11 @@ namespace SOCForm
             this.diceRollBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tradingPanel = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tradeeBrkVlu = new System.Windows.Forms.TextBox();
+            this.tradeeWlVlu = new System.Windows.Forms.TextBox();
+            this.tradeeOreVlu = new System.Windows.Forms.TextBox();
+            this.tradeeGrnVlu = new System.Windows.Forms.TextBox();
+            this.tradeeLumberVlu = new System.Windows.Forms.TextBox();
             this.tradeeLumberQty = new System.Windows.Forms.Label();
             this.tradeeBrickQty = new System.Windows.Forms.Label();
             this.tradeeWoolQty = new System.Windows.Forms.Label();
@@ -401,11 +401,11 @@ namespace SOCForm
             // 
             // tradingPanel
             // 
-            this.tradingPanel.Controls.Add(this.textBox1);
-            this.tradingPanel.Controls.Add(this.textBox2);
-            this.tradingPanel.Controls.Add(this.textBox3);
-            this.tradingPanel.Controls.Add(this.textBox4);
-            this.tradingPanel.Controls.Add(this.textBox5);
+            this.tradingPanel.Controls.Add(this.tradeeBrkVlu);
+            this.tradingPanel.Controls.Add(this.tradeeWlVlu);
+            this.tradingPanel.Controls.Add(this.tradeeOreVlu);
+            this.tradingPanel.Controls.Add(this.tradeeGrnVlu);
+            this.tradingPanel.Controls.Add(this.tradeeLumberVlu);
             this.tradingPanel.Controls.Add(this.tradeeLumberQty);
             this.tradingPanel.Controls.Add(this.tradeeBrickQty);
             this.tradingPanel.Controls.Add(this.tradeeWoolQty);
@@ -441,100 +441,90 @@ namespace SOCForm
             this.tradingPanel.TabIndex = 40;
             this.tradingPanel.Visible = false;
             // 
-            // textBox1
+            // tradeeBrkVlu
             // 
-            this.textBox1.Location = new System.Drawing.Point(358, 68);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(25, 20);
-            this.textBox1.TabIndex = 67;
+            this.tradeeBrkVlu.Location = new System.Drawing.Point(358, 68);
+            this.tradeeBrkVlu.Margin = new System.Windows.Forms.Padding(2);
+            this.tradeeBrkVlu.Name = "tradeeBrkVlu";
+            this.tradeeBrkVlu.Size = new System.Drawing.Size(25, 20);
+            this.tradeeBrkVlu.TabIndex = 67;
             // 
-            // textBox2
+            // tradeeWlVlu
             // 
-            this.textBox2.Location = new System.Drawing.Point(358, 102);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(25, 20);
-            this.textBox2.TabIndex = 66;
+            this.tradeeWlVlu.Location = new System.Drawing.Point(358, 102);
+            this.tradeeWlVlu.Margin = new System.Windows.Forms.Padding(2);
+            this.tradeeWlVlu.Name = "tradeeWlVlu";
+            this.tradeeWlVlu.Size = new System.Drawing.Size(25, 20);
+            this.tradeeWlVlu.TabIndex = 66;
             // 
-            // textBox3
+            // tradeeOreVlu
             // 
-            this.textBox3.Location = new System.Drawing.Point(358, 134);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(25, 20);
-            this.textBox3.TabIndex = 65;
+            this.tradeeOreVlu.Location = new System.Drawing.Point(358, 134);
+            this.tradeeOreVlu.Margin = new System.Windows.Forms.Padding(2);
+            this.tradeeOreVlu.Name = "tradeeOreVlu";
+            this.tradeeOreVlu.Size = new System.Drawing.Size(25, 20);
+            this.tradeeOreVlu.TabIndex = 65;
             // 
-            // textBox4
+            // tradeeGrnVlu
             // 
-            this.textBox4.Location = new System.Drawing.Point(358, 170);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(25, 20);
-            this.textBox4.TabIndex = 64;
+            this.tradeeGrnVlu.Location = new System.Drawing.Point(358, 170);
+            this.tradeeGrnVlu.Margin = new System.Windows.Forms.Padding(2);
+            this.tradeeGrnVlu.Name = "tradeeGrnVlu";
+            this.tradeeGrnVlu.Size = new System.Drawing.Size(25, 20);
+            this.tradeeGrnVlu.TabIndex = 64;
             // 
-            // textBox5
+            // tradeeLumberVlu
             // 
-            this.textBox5.Location = new System.Drawing.Point(358, 33);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(25, 20);
-            this.textBox5.TabIndex = 63;
+            this.tradeeLumberVlu.Location = new System.Drawing.Point(358, 33);
+            this.tradeeLumberVlu.Margin = new System.Windows.Forms.Padding(2);
+            this.tradeeLumberVlu.Name = "tradeeLumberVlu";
+            this.tradeeLumberVlu.Size = new System.Drawing.Size(25, 20);
+            this.tradeeLumberVlu.TabIndex = 63;
             // 
             // tradeeLumberQty
             // 
-            this.tradeeLumberQty.AutoSize = true;
             this.tradeeLumberQty.BackColor = System.Drawing.Color.FloralWhite;
             this.tradeeLumberQty.Location = new System.Drawing.Point(248, 37);
             this.tradeeLumberQty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tradeeLumberQty.Name = "tradeeLumberQty";
             this.tradeeLumberQty.Size = new System.Drawing.Size(19, 13);
             this.tradeeLumberQty.TabIndex = 62;
-            this.tradeeLumberQty.Text = "15";
             // 
             // tradeeBrickQty
             // 
-            this.tradeeBrickQty.AutoSize = true;
             this.tradeeBrickQty.BackColor = System.Drawing.Color.FloralWhite;
             this.tradeeBrickQty.Location = new System.Drawing.Point(248, 70);
             this.tradeeBrickQty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tradeeBrickQty.Name = "tradeeBrickQty";
             this.tradeeBrickQty.Size = new System.Drawing.Size(19, 13);
             this.tradeeBrickQty.TabIndex = 61;
-            this.tradeeBrickQty.Text = "14";
             // 
             // tradeeWoolQty
             // 
-            this.tradeeWoolQty.AutoSize = true;
             this.tradeeWoolQty.BackColor = System.Drawing.Color.FloralWhite;
             this.tradeeWoolQty.Location = new System.Drawing.Point(248, 104);
             this.tradeeWoolQty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tradeeWoolQty.Name = "tradeeWoolQty";
             this.tradeeWoolQty.Size = new System.Drawing.Size(19, 13);
             this.tradeeWoolQty.TabIndex = 60;
-            this.tradeeWoolQty.Text = "15";
             // 
             // tradeeOreQty
             // 
-            this.tradeeOreQty.AutoSize = true;
             this.tradeeOreQty.BackColor = System.Drawing.Color.FloralWhite;
             this.tradeeOreQty.Location = new System.Drawing.Point(248, 138);
             this.tradeeOreQty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tradeeOreQty.Name = "tradeeOreQty";
             this.tradeeOreQty.Size = new System.Drawing.Size(19, 13);
             this.tradeeOreQty.TabIndex = 59;
-            this.tradeeOreQty.Text = "15";
             // 
             // tradeeGrainQty
             // 
-            this.tradeeGrainQty.AutoSize = true;
             this.tradeeGrainQty.BackColor = System.Drawing.Color.FloralWhite;
             this.tradeeGrainQty.Location = new System.Drawing.Point(248, 172);
             this.tradeeGrainQty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tradeeGrainQty.Name = "tradeeGrainQty";
             this.tradeeGrainQty.Size = new System.Drawing.Size(19, 13);
             this.tradeeGrainQty.TabIndex = 58;
-            this.tradeeGrainQty.Text = "15";
             // 
             // label12
             // 
@@ -633,58 +623,48 @@ namespace SOCForm
             // 
             // traderLumQty
             // 
-            this.traderLumQty.AutoSize = true;
             this.traderLumQty.BackColor = System.Drawing.Color.FloralWhite;
             this.traderLumQty.Location = new System.Drawing.Point(173, 37);
             this.traderLumQty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.traderLumQty.Name = "traderLumQty";
             this.traderLumQty.Size = new System.Drawing.Size(19, 13);
             this.traderLumQty.TabIndex = 47;
-            this.traderLumQty.Text = "15";
             // 
             // traderBrickQty
             // 
-            this.traderBrickQty.AutoSize = true;
             this.traderBrickQty.BackColor = System.Drawing.Color.FloralWhite;
             this.traderBrickQty.Location = new System.Drawing.Point(173, 70);
             this.traderBrickQty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.traderBrickQty.Name = "traderBrickQty";
             this.traderBrickQty.Size = new System.Drawing.Size(19, 13);
             this.traderBrickQty.TabIndex = 46;
-            this.traderBrickQty.Text = "14";
             // 
             // traderWoolQty
             // 
-            this.traderWoolQty.AutoSize = true;
             this.traderWoolQty.BackColor = System.Drawing.Color.FloralWhite;
             this.traderWoolQty.Location = new System.Drawing.Point(173, 104);
             this.traderWoolQty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.traderWoolQty.Name = "traderWoolQty";
             this.traderWoolQty.Size = new System.Drawing.Size(19, 13);
             this.traderWoolQty.TabIndex = 45;
-            this.traderWoolQty.Text = "15";
             // 
             // traderOreQty
             // 
-            this.traderOreQty.AutoSize = true;
             this.traderOreQty.BackColor = System.Drawing.Color.FloralWhite;
             this.traderOreQty.Location = new System.Drawing.Point(173, 138);
             this.traderOreQty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.traderOreQty.Name = "traderOreQty";
             this.traderOreQty.Size = new System.Drawing.Size(19, 13);
             this.traderOreQty.TabIndex = 44;
-            this.traderOreQty.Text = "15";
             // 
             // traderGrainQty
             // 
-            this.traderGrainQty.AutoSize = true;
             this.traderGrainQty.BackColor = System.Drawing.Color.FloralWhite;
             this.traderGrainQty.Location = new System.Drawing.Point(173, 172);
             this.traderGrainQty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.traderGrainQty.Name = "traderGrainQty";
             this.traderGrainQty.Size = new System.Drawing.Size(19, 13);
             this.traderGrainQty.TabIndex = 43;
-            this.traderGrainQty.Text = "15";
             // 
             // label6
             // 
@@ -772,6 +752,7 @@ namespace SOCForm
             this.acceptButton.TabIndex = 35;
             this.acceptButton.Text = "Accept";
             this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
             // 
             // button1
             // 
@@ -843,11 +824,11 @@ namespace SOCForm
         private Button player4Select;
         private Button player1Select;
         private Panel tradingPanel;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox tradeeBrkVlu;
+        private TextBox tradeeWlVlu;
+        private TextBox tradeeOreVlu;
+        private TextBox tradeeGrnVlu;
+        private TextBox tradeeLumberVlu;
         private Label label12;
         private Label label13;
         private Label label14;

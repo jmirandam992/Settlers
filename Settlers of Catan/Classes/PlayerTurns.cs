@@ -141,6 +141,15 @@ namespace SOCForm.Classes
 
         //}
 
+        public void acceptTrade(int lumber, int bricks, int wool, int ore, int grain, int lumber2, int bricks2, int wool2, int ore2, int grain2)
+        {
+
+        }
+
     }
 }
+/*
+  int tl1, tb1, tw1, to1, tg1;
+            int tdl1, tdb1, tdw1, tdo1, tdg1;
 
+ * /

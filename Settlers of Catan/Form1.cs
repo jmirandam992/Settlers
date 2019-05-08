@@ -23,7 +23,7 @@ namespace SOCForm
 
         public Form1(int players, int ai, int difficulty)
         {
-            
+
             InitializeComponent();
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             Gameboard.HexSize = hexSize;
@@ -36,14 +36,16 @@ namespace SOCForm
             dieP2.BackgroundImage = Properties.Resources.one;
             tradeButtonHider(currentPlayer);
             play.initializePlayerData();
-            
-            
+            play.getTraderData(this, currentPlayer);
+
+
         }
 
         Dice dice = new Dice();
 
-        
+
         private int currentPlayer = 1;
+
         // Checks if the hexagons have been generated.
         private bool generated = false;
 
@@ -136,28 +138,40 @@ namespace SOCForm
             }
         }
 
-        
+
 
         private void fillCardData(int PlayerID, Form1 game)
         {
-           
-           
+
+
         }
 
         private void tradeButtonHider(int currentPlayer)
         {
-            switch(currentPlayer)
+            switch (currentPlayer)
             {
                 case 1:
+                    player2Select.Enabled = true;
+                    player3Select.Enabled = true;
+                    player4Select.Enabled = true;
                     player1Select.Enabled = false;
                     break;
                 case 2:
+                    player1Select.Enabled = true;
                     player2Select.Enabled = false;
+                    player3Select.Enabled = true;
+                    player4Select.Enabled = true;
                     break;
                 case 3:
+                    player1Select.Enabled = true;
+                    player2Select.Enabled = true;
                     player3Select.Enabled = false;
+                    player4Select.Enabled = true;
                     break;
                 case 4:
+                    player1Select.Enabled = true;
+                    player2Select.Enabled = true;
+                    player3Select.Enabled = true;
                     player4Select.Enabled = false;
                     break;
             }
@@ -165,14 +179,14 @@ namespace SOCForm
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+
             fillCardData(1, this);
         }
 
         private void player1Select_Click(object sender, EventArgs e)
         {
-           play.getPlayerTradeeData(this, 1);
-           tradingPanel.Show();
+            play.getPlayerTradeeData(this, 1);
+            tradingPanel.Show();
         }
 
         private void player2Select_Click(object sender, EventArgs e)
@@ -204,6 +218,116 @@ namespace SOCForm
             else
             {
                 currentPlayer = 1;
+            }
+
+            tradeButtonHider(currentPlayer);
+            play.getTraderData(this, currentPlayer);
+        }
+
+        private void acceptButton_Click(object sender, EventArgs e)
+        {
+            int tl1, tb1, tw1, to1, tg1;
+            int tdl1, tdb1, tdw1, tdo1, tdg1;
+            int tl2, tb2, tw2, to2, tg2, tdl2, tdb2, tdw2, tdo2, tdg2;
+
+            if (int.TryParse(tradeeLumberVlu.Text, out tl1) && int.TryParse(tradeeLumberQty.Text, out tl2) && tl2 > tl1)
+            {
+               
+                if (int.TryParse(tradeeBrkVlu.Text, out tb1) && int.TryParse(tradeeBrickQty.Text, out tb2) && tb2 > tb1)
+                {
+                   if (int.TryParse(tradeeWlVlu.Text, out tw1) && int.TryParse(tradeeWoolQty.Text, out tw2) && tw2 > tw1)
+                    {
+                        if (int.TryParse(tradeeOreVlu.Text, out to1) && int.TryParse(tradeeOreQty.Text, out to2) && to2 > to1)
+                        {
+                            if (int.TryParse(tradeeGrnVlu.Text, out tg1) && int.TryParse(tradeeGrainQty.Text, out tg2) && tg2 > tg1)
+                            {
+                                //data for stuff being traded from current player
+                                if (int.TryParse(traderLumbOffer.Text, out tdl1) && int.TryParse(traderLumQty.Text, out tdl2) && tdl2 > tdl1)
+                                {
+                                    
+                                    if (int.TryParse(traderBrickOffer.Text, out tdb1))
+                                    {
+                                       
+                                        int.TryParse(traderBrickQty.Text, out tdb2);
+                               
+
+                                        if (int.TryParse(traderWoolOffer.Text, out tdw1))
+                                        {
+                                           
+                                            int.TryParse(traderWoolQty.Text, out tdw2);
+                                     
+
+                                            if (int.TryParse(traderOreOffer.Text, out tdo1))
+                                            {
+                                                
+                                                int.TryParse(traderOreQty.Text, out tdo2);
+                                            
+                                                if (int.TryParse(traderGrainOffer.Text, out tdg1))
+                                                {
+                                                   
+                                                    int.TryParse(traderGrainQty.Text, out tdg2);
+                                                    /*
+                                                         int tl1, tb1, tw1, to1, tg1;
+                                                         int tdl1, tdb1, tdw1, tdo1, tdg1;
+                                                         int tl2, tb2, tw2, to2, tg2, tdl2, tdb2, tdw2, tdo2, tdg2;
+                                                     */
+
+                                                    tl1 = tl2 - tl1 + tdl1;
+                                                    turns.acceptTrade(tl1, tb1, tw1, to1, tg1, tdl1, tdb1, tdw1, tdo1,
+                                                        tdg1);
+                                                }
+                                                else
+                                                {
+                                                    MessageBox.Show("Please enter only numbers");
+                                                }
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Please enter only numbers");
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Please enter only numbers");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Please enter only numbers");
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Please enter only numbers");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Please enter only numbers");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter only numbers");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter only numbers");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter only numbers");
+
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please enter only numbers");
+
             }
         }
     }
