@@ -181,23 +181,24 @@ namespace SOCForm.Classes
                                         break;
                                     case 2:
                                         
-                                        game.traderWoolQty.Text = myString;
+                                        game.tradeeWoolQty.Text = myString;
                                         break;
                                     case 3:
                                         
-                                        game.traderGrainQty.Text = myString;
+                                        game.tradeeGrainQty.Text = myString;
                                         break;
                                     case 4:
                                         
-                                        game.traderBrickQty.Text = myString;
+                                        game.tradeeBrickQty.Text = myString;
                                         break;
                                     case 5:
                                        
-                                        game.traderOreQty.Text = myString;
+                                        game.tradeeOreQty.Text = myString;
                                         break;
                                 }
                             }
                         }
+
 
                         myConnection.Close();
                     }
