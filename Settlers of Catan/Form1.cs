@@ -45,6 +45,7 @@ namespace SOCForm
 
 
         private int currentPlayer = 1;
+        private int tradingPlayer;
 
         // Checks if the hexagons have been generated.
         private bool generated = false;
@@ -187,24 +188,28 @@ namespace SOCForm
         {
             play.getPlayerTradeeData(this, 1);
             tradingPanel.Show();
+            tradingPlayer = 1;
         }
 
         private void player2Select_Click(object sender, EventArgs e)
         {
             play.getPlayerTradeeData(this, 2);
             tradingPanel.Show();
+            tradingPlayer = 2;
         }
 
         private void player3Select_Click(object sender, EventArgs e)
         {
             play.getPlayerTradeeData(this, 3);
             tradingPanel.Show();
+            tradingPlayer = 3;
         }
 
         private void player4Select_Click(object sender, EventArgs e)
         {
             play.getPlayerTradeeData(this, 4);
             tradingPanel.Show();
+            tradingPlayer = 4;
 
         }
 
@@ -244,37 +249,45 @@ namespace SOCForm
                                 //data for stuff being traded from current player
                                 if (int.TryParse(traderLumbOffer.Text, out tdl1) && int.TryParse(traderLumQty.Text, out tdl2) && tdl2 > tdl1)
                                 {
-                                    
-                                    if (int.TryParse(traderBrickOffer.Text, out tdb1))
+                                    if (int.TryParse(traderBrickOffer.Text, out tdb1) && int.TryParse(traderBrickQty.Text, out tdb2) && tdb2 > tdb1)
                                     {
-                                       
-                                        int.TryParse(traderBrickQty.Text, out tdb2);
-                               
-
-                                        if (int.TryParse(traderWoolOffer.Text, out tdw1))
+                                        if (int.TryParse(traderWoolOffer.Text, out tdw1) && int.TryParse(traderWoolQty.Text, out tdw2) && tdw2 > tdw1)
                                         {
-                                           
-                                            int.TryParse(traderWoolQty.Text, out tdw2);
-                                     
-
-                                            if (int.TryParse(traderOreOffer.Text, out tdo1))
+                                           if (int.TryParse(traderOreOffer.Text, out tdo1) && int.TryParse(traderOreQty.Text, out tdo2) && tdo2 > tdo1)
                                             {
-                                                
-                                                int.TryParse(traderOreQty.Text, out tdo2);
-                                            
-                                                if (int.TryParse(traderGrainOffer.Text, out tdg1))
+                                                if (int.TryParse(traderGrainOffer.Text, out tdg1) && int.TryParse(traderGrainQty.Text, out tdg2) && tdg2 > tdg1)
                                                 {
                                                    
-                                                    int.TryParse(traderGrainQty.Text, out tdg2);
                                                     /*
                                                          int tl1, tb1, tw1, to1, tg1;
                                                          int tdl1, tdb1, tdw1, tdo1, tdg1;
                                                          int tl2, tb2, tw2, to2, tg2, tdl2, tdb2, tdw2, tdo2, tdg2;
                                                      */
+                                                    //trader lumber total
+                                                    int tdl1f = tdl2 - tdl1 + tl1;
+                                                    //tradee lumber total
+                                                    int tlf2 = tl2 - tl1 + tdl1;
+                                                    //trader brick total
+                                                    int tdb1f = tdb2 - tdb1 + tb1;
+                                                    //tradee brick total
+                                                    int tlbf = tb2 - tb1 + tdb1;
+                                                    //trader wool total
+                                                    int tdwf = tdw2 - tdw1 + tw1;
+                                                    //tradee wool totals
+                                                    int tlwf = tw2 - tw1 + tdw1;
+                                                    //trader ore totals
+                                                    int tdof = tdo2 - tdo1 + tw1;
+                                                    //tradee ore totals
+                                                    int tlof = tw2 - tw1 + tdo1;
+                                                    //trader grain totals
+                                                    int tdgf = tdg2 - tdg1 + tg1;
+                                                    //tradee grain totals
+                                                    int tlgf = tg2 - tg1 + tdg1;
+                                                     
 
                                                     tl1 = tl2 - tl1 + tdl1;
-                                                    turns.acceptTrade(tl1, tb1, tw1, to1, tg1, tdl1, tdb1, tdw1, tdo1,
-                                                        tdg1);
+                                                    turns.acceptTrade(tlf2, tlbf, tlwf, tlof, tlgf, tdl1f, tdb1f, tdwf, tdof,
+                                                        tdgf, currentPlayer, tradingPlayer);
                                                 }
                                                 else
                                                 {

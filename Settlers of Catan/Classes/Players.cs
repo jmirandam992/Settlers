@@ -36,13 +36,13 @@ namespace SOCForm.Classes
                             new SqlCommand(
                                 "UPDATE Players SET Victory_Points = 0, Longest_Road = 0, ROAD_COUNT = 15 WHERE PLAYER_ID = @PLAYER_ID",
                                 myConnection);
-                        SqlCommand deleteCards = new SqlCommand("DELETE FROM PLAYER_CARDS", myConnection);
+                     //   SqlCommand deleteCards = new SqlCommand("DELETE FROM PLAYER_CARDS", myConnection);
                         SqlCommand deleteRoads = new SqlCommand("DELETE FROM ROADS", myConnection);
 
                         fillCard.Parameters.AddWithValue("@PLAYER_ID", i);
 
                         myConnection.Open();
-                        deleteCards.ExecuteNonQuery();
+                      //  deleteCards.ExecuteNonQuery();
                         deleteRoads.ExecuteNonQuery();
                         using (cards = fillCard.ExecuteReader())
                         {

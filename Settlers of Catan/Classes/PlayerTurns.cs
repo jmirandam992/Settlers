@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SOCForm.socDataSetTableAdapters;
 using System.Configuration;
+using System.Deployment.Application;
 
 namespace SOCForm.Classes
 {
@@ -14,7 +15,7 @@ namespace SOCForm.Classes
         //this is the initial player turn. They will need to place 2 roads and 2 settlements
         public PlayerTurns(int playerID, string playerType)
         {
-           
+
         }
 
         public PlayerTurns()
@@ -141,15 +142,59 @@ namespace SOCForm.Classes
 
         //}
 
-        public void acceptTrade(int lumber, int bricks, int wool, int ore, int grain, int lumber2, int bricks2, int wool2, int ore2, int grain2)
+        public void acceptTrade(int lumber, int bricks, int wool, int ore, int grain, int lumber2, int bricks2, int wool2, int ore2, int grain2, int PlayerID, int tradingPlayer)
         {
 
+            string connectionString = ConfigurationManager
+                .ConnectionStrings["SOCForm.Properties.Settings.socConnectionString"].ConnectionString;
+
+            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    int[] cpData = new[] { lumber2, bricks2, wool2, ore2, grain2};
+                    int[] tpData = new[] { lumber, bricks, wool, ore, grain};
+
+                    myConnection.Open();
+                    for (int i = 0; i < cpData.Length; i++)
+                    {
+                        for (int j = 1; j < 5; j++)
+                        {
+                            SqlCommand updateCurrentPlayer =
+                                new SqlCommand(
+                                    "UPDATE PLAYER_CARDS SET QTY = @CPL1 WHERE PLAYER_ID = @PLAYER_ID AND CARD_ID = @CARD_ID",
+                                    myConnection);
+
+                            updateCurrentPlayer.Parameters.AddWithValue("@PLAYER_ID", PlayerID);
+                            updateCurrentPlayer.Parameters.AddWithValue("@cpl1", cpData[i]);
+                            updateCurrentPlayer.Parameters.AddWithValue("@CARD_ID", j);
+                            updateCurrentPlayer.ExecuteNonQuery();
+                        }
+                    }
+
+                    for (int i = 0; i < tpData.Length; i++)
+                    {
+                        for (int j = 1; j < 5; j++)
+                        {
+                            SqlCommand updateTradingPlayer = new SqlCommand("UPDATE PLAYER_CARDS SET QTY = @CPL1 WHERE PLAYER_ID = @PLAYER_ID AND CARD_ID = @CARD_ID",
+                                myConnection);
+                            updateTradingPlayer.Parameters.AddWithValue("@TRADING_PLAYER", tradingPlayer);
+                            updateTradingPlayer.Parameters.AddWithValue("@tpl1", tpData[i]);
+                            updateTradingPlayer.Parameters.AddWithValue("@CARD_ID", j);
+                            updateTradingPlayer.ExecuteNonQuery();
+                        }
+                    }
+
+                    myConnection.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+
+            }
         }
 
     }
 }
-/*
-  int tl1, tb1, tw1, to1, tg1;
-            int tdl1, tdb1, tdw1, tdo1, tdg1;
-
- * /
