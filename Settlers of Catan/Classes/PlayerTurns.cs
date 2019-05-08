@@ -158,7 +158,7 @@ namespace SOCForm.Classes
                     myConnection.Open();
                     for (int i = 0; i < cpData.Length; i++)
                     {
-                        for (int j = 1; j < 5; j++)
+                        for (int j = 1; j < 6; j++)
                         {
                             SqlCommand updateCurrentPlayer =
                                 new SqlCommand(
@@ -174,12 +174,12 @@ namespace SOCForm.Classes
 
                     for (int i = 0; i < tpData.Length; i++)
                     {
-                        for (int j = 1; j < 5; j++)
+                        for (int j = 1; j < 6; j++)
                         {
-                            SqlCommand updateTradingPlayer = new SqlCommand("UPDATE PLAYER_CARDS SET QTY = @CPL1 WHERE PLAYER_ID = @PLAYER_ID AND CARD_ID = @CARD_ID",
+                            SqlCommand updateTradingPlayer = new SqlCommand("UPDATE PLAYER_CARDS SET QTY = @TPL1 WHERE PLAYER_ID = @TRADING_PLAYER AND CARD_ID = @CARD_ID",
                                 myConnection);
                             updateTradingPlayer.Parameters.AddWithValue("@TRADING_PLAYER", tradingPlayer);
-                            updateTradingPlayer.Parameters.AddWithValue("@tpl1", tpData[i]);
+                            updateTradingPlayer.Parameters.AddWithValue("@TPL1", tpData[i]);
                             updateTradingPlayer.Parameters.AddWithValue("@CARD_ID", j);
                             updateTradingPlayer.ExecuteNonQuery();
                         }

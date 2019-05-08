@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using Graphics = SOCForm.Classes.Graphics;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Drawing.Text;
 
 namespace SOCForm
 {
@@ -229,33 +230,48 @@ namespace SOCForm
             play.getTraderData(this, currentPlayer);
         }
 
+        private void clearTradingData()
+        {
+            tradeeLumberVlu.Text = "0";
+            tradeeBrkVlu.Text = "0";
+            tradeeWlVlu.Text = "0";
+            tradeeOreVlu.Text = "0";
+            tradeeGrnVlu.Text = "0";
+
+            traderLumbOffer.Text = "0";
+            traderBrickOffer.Text = "0";
+            traderWoolOffer.Text = "0";
+            traderOreOffer.Text = "0";
+            traderGrainOffer.Text = "0";
+        }
+
         private void acceptButton_Click(object sender, EventArgs e)
         {
             int tl1, tb1, tw1, to1, tg1;
             int tdl1, tdb1, tdw1, tdo1, tdg1;
             int tl2, tb2, tw2, to2, tg2, tdl2, tdb2, tdw2, tdo2, tdg2;
 
-            if (int.TryParse(tradeeLumberVlu.Text, out tl1) && int.TryParse(tradeeLumberQty.Text, out tl2) && tl2 > tl1)
+            if (Int32.TryParse(tradeeLumberVlu.Text, out tl1) && Int32.TryParse(tradeeLumberQty.Text, out tl2) && tl2 >= tl1)
             {
                
-                if (int.TryParse(tradeeBrkVlu.Text, out tb1) && int.TryParse(tradeeBrickQty.Text, out tb2) && tb2 > tb1)
+                if (Int32.TryParse(tradeeBrkVlu.Text, out tb1) && Int32.TryParse(tradeeBrickQty.Text, out tb2) && tb2 >= tb1)
                 {
-                   if (int.TryParse(tradeeWlVlu.Text, out tw1) && int.TryParse(tradeeWoolQty.Text, out tw2) && tw2 > tw1)
+                   if (Int32.TryParse(tradeeWlVlu.Text, out tw1) && Int32.TryParse(tradeeWoolQty.Text, out tw2) && tw2 >= tw1)
                     {
-                        if (int.TryParse(tradeeOreVlu.Text, out to1) && int.TryParse(tradeeOreQty.Text, out to2) && to2 > to1)
+                        if (Int32.TryParse(tradeeOreVlu.Text, out to1) && Int32.TryParse(tradeeOreQty.Text, out to2) && to2 >= to1)
                         {
-                            if (int.TryParse(tradeeGrnVlu.Text, out tg1) && int.TryParse(tradeeGrainQty.Text, out tg2) && tg2 > tg1)
+                            if (Int32.TryParse(tradeeGrnVlu.Text, out tg1) && Int32.TryParse(tradeeGrainQty.Text, out tg2) && tg2 >= tg1)
                             {
                                 //data for stuff being traded from current player
-                                if (int.TryParse(traderLumbOffer.Text, out tdl1) && int.TryParse(traderLumQty.Text, out tdl2) && tdl2 > tdl1)
+                                if (Int32.TryParse(traderLumbOffer.Text, out tdl1) && Int32.TryParse(traderLumQty.Text, out tdl2) && tdl2 >= tdl1)
                                 {
-                                    if (int.TryParse(traderBrickOffer.Text, out tdb1) && int.TryParse(traderBrickQty.Text, out tdb2) && tdb2 > tdb1)
+                                    if (Int32.TryParse(traderBrickOffer.Text, out tdb1) && Int32.TryParse(traderBrickQty.Text, out tdb2) && tdb2 >= tdb1)
                                     {
-                                        if (int.TryParse(traderWoolOffer.Text, out tdw1) && int.TryParse(traderWoolQty.Text, out tdw2) && tdw2 > tdw1)
+                                        if (Int32.TryParse(traderWoolOffer.Text, out tdw1) && Int32.TryParse(traderWoolQty.Text, out tdw2) && tdw2 >= tdw1)
                                         {
-                                           if (int.TryParse(traderOreOffer.Text, out tdo1) && int.TryParse(traderOreQty.Text, out tdo2) && tdo2 > tdo1)
+                                           if (Int32.TryParse(traderOreOffer.Text, out tdo1) && Int32.TryParse(traderOreQty.Text, out tdo2) && tdo2 >= tdo1)
                                             {
-                                                if (int.TryParse(traderGrainOffer.Text, out tdg1) && int.TryParse(traderGrainQty.Text, out tdg2) && tdg2 > tdg1)
+                                                if (Int32.TryParse(traderGrainOffer.Text, out tdg1) && Int32.TryParse(traderGrainQty.Text, out tdg2) && tdg2 >= tdg1)
                                                 {
                                                    
                                                     /*
@@ -288,50 +304,53 @@ namespace SOCForm
                                                     tl1 = tl2 - tl1 + tdl1;
                                                     turns.acceptTrade(tlf2, tlbf, tlwf, tlof, tlgf, tdl1f, tdb1f, tdwf, tdof,
                                                         tdgf, currentPlayer, tradingPlayer);
+                                                    play.getTraderData(this, currentPlayer);
+                                                    play.getPlayerTradeeData(this, tradingPlayer);
+                                                    clearTradingData();
                                                 }
                                                 else
                                                 {
-                                                    MessageBox.Show("Please enter only numbers");
+                                                    MessageBox.Show("Please enter only numbers for Trader Grain");
                                                 }
                                             }
                                             else
                                             {
-                                                MessageBox.Show("Please enter only numbers");
+                                                MessageBox.Show("Please enter only numbers for Trader Ore");
                                             }
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Please enter only numbers");
+                                            MessageBox.Show("Please enter only numbers for Trader Wool");
                                         }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Please enter only numbers");
+                                        MessageBox.Show("Please enter only numbers for Trader Bricks");
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Please enter only numbers");
+                                    MessageBox.Show("Please enter only numbers for Trader Lumber");
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Please enter only numbers");
+                                MessageBox.Show("Please enter only numbers for Grain");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Please enter only numbers");
+                            MessageBox.Show("Please enter only numbers for Ore");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Please enter only numbers");
+                        MessageBox.Show("Please enter only numbers for Wool");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please enter only numbers");
+                    MessageBox.Show("Please enter only numbers for Brick");
 
 
                 }
@@ -339,7 +358,7 @@ namespace SOCForm
             }
             else
             {
-                MessageBox.Show("Please enter only numbers");
+                MessageBox.Show("Please enter only numbers for Lumber");
 
             }
         }
