@@ -17,6 +17,11 @@ namespace SOCForm.Classes
            
         }
 
+        public PlayerTurns()
+        {
+
+        }
+
 
         //name of current player
         private string playerName;

@@ -14,11 +14,11 @@ namespace SOCForm.Classes
         public Players(int Players)
         {
 
-            initializePlayerData();
+            
         }
 
         //initialize all players with default data(only to be used at game start)
-        private void initializePlayerData()
+        public void initializePlayerData()
         {
             string connectionString = ConfigurationManager
                 .ConnectionStrings["SOCForm.Properties.Settings.socConnectionString"].ConnectionString;
@@ -67,7 +67,7 @@ namespace SOCForm.Classes
         }
        
         //data for the current players trading
-        private void getTraderData(Form1 game, int playerID)
+        public void getTraderData(Form1 game, int playerID)
         {
             
             game.traderLumQty.Text = "0";
@@ -137,7 +137,7 @@ namespace SOCForm.Classes
         }
 
         //data for the selected tradee
-        private void getPlayerTradeeData(Form1 game, int playerID)
+        public void getPlayerTradeeData(Form1 game, int playerID)
         {
             game.tradeeLumberQty.Text = "0";
             game.tradeeBrickQty.Text = "0";

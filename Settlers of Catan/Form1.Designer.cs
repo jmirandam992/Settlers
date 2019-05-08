@@ -31,16 +31,6 @@ namespace SOCForm
         private void InitializeComponent()
         {
             System.Windows.Forms.Panel tradePanel;
-            this.label2 = new System.Windows.Forms.Label();
-            this.player2Select = new System.Windows.Forms.Button();
-            this.player3Select = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.player1Select = new System.Windows.Forms.Button();
-            this.playerDataPnlBtn = new System.Windows.Forms.Button();
-            this.endTurnBtn = new System.Windows.Forms.Button();
-            this.dieP2 = new System.Windows.Forms.PictureBox();
-            this.dieP1 = new System.Windows.Forms.PictureBox();
-            this.diceRollBtn = new System.Windows.Forms.Button();
             this.playerData = new System.Windows.Forms.Panel();
             this.lmbCntLbl = new System.Windows.Forms.Label();
             this.brkCntLbl = new System.Windows.Forms.Label();
@@ -58,7 +48,17 @@ namespace SOCForm
             this.woolLbl = new System.Windows.Forms.Label();
             this.brickLbl = new System.Windows.Forms.Label();
             this.lmbrLbl = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.player2Select = new System.Windows.Forms.Button();
+            this.player3Select = new System.Windows.Forms.Button();
+            this.player4Select = new System.Windows.Forms.Button();
+            this.player1Select = new System.Windows.Forms.Button();
+            this.playerDataPnlBtn = new System.Windows.Forms.Button();
+            this.endTurnBtn = new System.Windows.Forms.Button();
+            this.dieP2 = new System.Windows.Forms.PictureBox();
+            this.dieP1 = new System.Windows.Forms.PictureBox();
+            this.diceRollBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tradingPanel = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -96,10 +96,10 @@ namespace SOCForm
             this.button3 = new System.Windows.Forms.Button();
             tradePanel = new System.Windows.Forms.Panel();
             tradePanel.SuspendLayout();
+            this.playerData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dieP2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieP1)).BeginInit();
-            this.playerData.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.tradingPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tradePanel
@@ -107,10 +107,10 @@ namespace SOCForm
             tradePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             tradePanel.BackColor = System.Drawing.Color.DarkSlateGray;
             tradePanel.Controls.Add(this.playerData);
-            tradePanel.Controls.Add(this.panel1);
+            tradePanel.Controls.Add(this.tradingPanel);
             tradePanel.Controls.Add(this.player2Select);
             tradePanel.Controls.Add(this.player3Select);
-            tradePanel.Controls.Add(this.button2);
+            tradePanel.Controls.Add(this.player4Select);
             tradePanel.Controls.Add(this.player1Select);
             tradePanel.Controls.Add(this.playerDataPnlBtn);
             tradePanel.Controls.Add(this.endTurnBtn);
@@ -123,98 +123,6 @@ namespace SOCForm
             tradePanel.Name = "tradePanel";
             tradePanel.Size = new System.Drawing.Size(438, 722);
             tradePanel.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FloralWhite;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(134, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 17);
-            this.label2.TabIndex = 44;
-            this.label2.Text = "Select Who to Trade With";
-            // 
-            // player2Select
-            // 
-            this.player2Select.Location = new System.Drawing.Point(140, 133);
-            this.player2Select.Name = "player2Select";
-            this.player2Select.Size = new System.Drawing.Size(75, 23);
-            this.player2Select.TabIndex = 43;
-            this.player2Select.Text = "Player 2";
-            this.player2Select.UseVisualStyleBackColor = true;
-            // 
-            // player3Select
-            // 
-            this.player3Select.Location = new System.Drawing.Point(223, 133);
-            this.player3Select.Name = "player3Select";
-            this.player3Select.Size = new System.Drawing.Size(75, 23);
-            this.player3Select.TabIndex = 42;
-            this.player3Select.Text = "Player 3";
-            this.player3Select.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(306, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 41;
-            this.button2.Text = "Player 4";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // player1Select
-            // 
-            this.player1Select.Location = new System.Drawing.Point(57, 133);
-            this.player1Select.Name = "player1Select";
-            this.player1Select.Size = new System.Drawing.Size(75, 23);
-            this.player1Select.TabIndex = 40;
-            this.player1Select.Text = "Player 1";
-            this.player1Select.UseVisualStyleBackColor = true;
-            // 
-            // playerDataPnlBtn
-            // 
-            this.playerDataPnlBtn.Location = new System.Drawing.Point(148, 520);
-            this.playerDataPnlBtn.Name = "playerDataPnlBtn";
-            this.playerDataPnlBtn.Size = new System.Drawing.Size(142, 23);
-            this.playerDataPnlBtn.TabIndex = 39;
-            this.playerDataPnlBtn.Text = "Show/Hide Player Data";
-            this.playerDataPnlBtn.UseVisualStyleBackColor = true;
-            this.playerDataPnlBtn.Click += new System.EventHandler(this.playerDataPnlBtn_Click);
-            // 
-            // endTurnBtn
-            // 
-            this.endTurnBtn.Location = new System.Drawing.Point(182, 476);
-            this.endTurnBtn.Name = "endTurnBtn";
-            this.endTurnBtn.Size = new System.Drawing.Size(75, 23);
-            this.endTurnBtn.TabIndex = 38;
-            this.endTurnBtn.Text = "End Turn";
-            this.endTurnBtn.UseVisualStyleBackColor = true;
-            // 
-            // dieP2
-            // 
-            this.dieP2.Location = new System.Drawing.Point(229, 341);
-            this.dieP2.Name = "dieP2";
-            this.dieP2.Size = new System.Drawing.Size(100, 100);
-            this.dieP2.TabIndex = 37;
-            this.dieP2.TabStop = false;
-            // 
-            // dieP1
-            // 
-            this.dieP1.Location = new System.Drawing.Point(110, 341);
-            this.dieP1.Name = "dieP1";
-            this.dieP1.Size = new System.Drawing.Size(100, 100);
-            this.dieP1.TabIndex = 36;
-            this.dieP1.TabStop = false;
-            // 
-            // diceRollBtn
-            // 
-            this.diceRollBtn.Location = new System.Drawing.Point(182, 447);
-            this.diceRollBtn.Name = "diceRollBtn";
-            this.diceRollBtn.Size = new System.Drawing.Size(75, 23);
-            this.diceRollBtn.TabIndex = 35;
-            this.diceRollBtn.Text = "Roll Dice";
-            this.diceRollBtn.UseVisualStyleBackColor = true;
-            this.diceRollBtn.Click += new System.EventHandler(this.diceRollBtn_Click);
             // 
             // playerData
             // 
@@ -394,47 +302,144 @@ namespace SOCForm
             this.lmbrLbl.TabIndex = 0;
             this.lmbrLbl.Text = "Lumber";
             // 
-            // panel1
+            // player2Select
             // 
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.tradeeLumberQty);
-            this.panel1.Controls.Add(this.tradeeBrickQty);
-            this.panel1.Controls.Add(this.tradeeWoolQty);
-            this.panel1.Controls.Add(this.tradeeOreQty);
-            this.panel1.Controls.Add(this.tradeeGrainQty);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.traderBrickOffer);
-            this.panel1.Controls.Add(this.traderWoolOffer);
-            this.panel1.Controls.Add(this.traderOreOffer);
-            this.panel1.Controls.Add(this.traderGrainOffer);
-            this.panel1.Controls.Add(this.traderLumbOffer);
-            this.panel1.Controls.Add(this.traderLumQty);
-            this.panel1.Controls.Add(this.traderBrickQty);
-            this.panel1.Controls.Add(this.traderWoolQty);
-            this.panel1.Controls.Add(this.traderOreQty);
-            this.panel1.Controls.Add(this.traderGrainQty);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.lumberTLabel);
-            this.panel1.Controls.Add(this.tradingPlayerLbl);
-            this.panel1.Controls.Add(this.currentPlayerlbl);
-            this.panel1.Controls.Add(this.acceptButton);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(12, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(409, 297);
-            this.panel1.TabIndex = 40;
-            this.panel1.Visible = false;
+            this.player2Select.Location = new System.Drawing.Point(140, 133);
+            this.player2Select.Name = "player2Select";
+            this.player2Select.Size = new System.Drawing.Size(75, 23);
+            this.player2Select.TabIndex = 43;
+            this.player2Select.Text = "Player 2";
+            this.player2Select.UseVisualStyleBackColor = true;
+            this.player2Select.Click += new System.EventHandler(this.player2Select_Click);
+            // 
+            // player3Select
+            // 
+            this.player3Select.Location = new System.Drawing.Point(223, 133);
+            this.player3Select.Name = "player3Select";
+            this.player3Select.Size = new System.Drawing.Size(75, 23);
+            this.player3Select.TabIndex = 42;
+            this.player3Select.Text = "Player 3";
+            this.player3Select.UseVisualStyleBackColor = true;
+            this.player3Select.Click += new System.EventHandler(this.player3Select_Click);
+            // 
+            // player4Select
+            // 
+            this.player4Select.Location = new System.Drawing.Point(306, 133);
+            this.player4Select.Name = "player4Select";
+            this.player4Select.Size = new System.Drawing.Size(75, 23);
+            this.player4Select.TabIndex = 41;
+            this.player4Select.Text = "Player 4";
+            this.player4Select.UseVisualStyleBackColor = true;
+            this.player4Select.Click += new System.EventHandler(this.player4Select_Click);
+            // 
+            // player1Select
+            // 
+            this.player1Select.Location = new System.Drawing.Point(57, 133);
+            this.player1Select.Name = "player1Select";
+            this.player1Select.Size = new System.Drawing.Size(75, 23);
+            this.player1Select.TabIndex = 40;
+            this.player1Select.Text = "Player 1";
+            this.player1Select.UseVisualStyleBackColor = true;
+            this.player1Select.Click += new System.EventHandler(this.player1Select_Click);
+            // 
+            // playerDataPnlBtn
+            // 
+            this.playerDataPnlBtn.Location = new System.Drawing.Point(148, 520);
+            this.playerDataPnlBtn.Name = "playerDataPnlBtn";
+            this.playerDataPnlBtn.Size = new System.Drawing.Size(142, 23);
+            this.playerDataPnlBtn.TabIndex = 39;
+            this.playerDataPnlBtn.Text = "Show/Hide Player Data";
+            this.playerDataPnlBtn.UseVisualStyleBackColor = true;
+            this.playerDataPnlBtn.Click += new System.EventHandler(this.playerDataPnlBtn_Click);
+            // 
+            // endTurnBtn
+            // 
+            this.endTurnBtn.Location = new System.Drawing.Point(182, 476);
+            this.endTurnBtn.Name = "endTurnBtn";
+            this.endTurnBtn.Size = new System.Drawing.Size(75, 23);
+            this.endTurnBtn.TabIndex = 38;
+            this.endTurnBtn.Text = "End Turn";
+            this.endTurnBtn.UseVisualStyleBackColor = true;
+            this.endTurnBtn.Click += new System.EventHandler(this.endTurnBtn_Click);
+            // 
+            // dieP2
+            // 
+            this.dieP2.Location = new System.Drawing.Point(229, 341);
+            this.dieP2.Name = "dieP2";
+            this.dieP2.Size = new System.Drawing.Size(100, 100);
+            this.dieP2.TabIndex = 37;
+            this.dieP2.TabStop = false;
+            // 
+            // dieP1
+            // 
+            this.dieP1.Location = new System.Drawing.Point(110, 341);
+            this.dieP1.Name = "dieP1";
+            this.dieP1.Size = new System.Drawing.Size(100, 100);
+            this.dieP1.TabIndex = 36;
+            this.dieP1.TabStop = false;
+            // 
+            // diceRollBtn
+            // 
+            this.diceRollBtn.Location = new System.Drawing.Point(182, 447);
+            this.diceRollBtn.Name = "diceRollBtn";
+            this.diceRollBtn.Size = new System.Drawing.Size(75, 23);
+            this.diceRollBtn.TabIndex = 35;
+            this.diceRollBtn.Text = "Roll Dice";
+            this.diceRollBtn.UseVisualStyleBackColor = true;
+            this.diceRollBtn.Click += new System.EventHandler(this.diceRollBtn_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FloralWhite;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(134, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(170, 17);
+            this.label2.TabIndex = 44;
+            this.label2.Text = "Select Who to Trade With";
+            // 
+            // tradingPanel
+            // 
+            this.tradingPanel.Controls.Add(this.textBox1);
+            this.tradingPanel.Controls.Add(this.textBox2);
+            this.tradingPanel.Controls.Add(this.textBox3);
+            this.tradingPanel.Controls.Add(this.textBox4);
+            this.tradingPanel.Controls.Add(this.textBox5);
+            this.tradingPanel.Controls.Add(this.tradeeLumberQty);
+            this.tradingPanel.Controls.Add(this.tradeeBrickQty);
+            this.tradingPanel.Controls.Add(this.tradeeWoolQty);
+            this.tradingPanel.Controls.Add(this.tradeeOreQty);
+            this.tradingPanel.Controls.Add(this.tradeeGrainQty);
+            this.tradingPanel.Controls.Add(this.label12);
+            this.tradingPanel.Controls.Add(this.label13);
+            this.tradingPanel.Controls.Add(this.label14);
+            this.tradingPanel.Controls.Add(this.label15);
+            this.tradingPanel.Controls.Add(this.label16);
+            this.tradingPanel.Controls.Add(this.traderBrickOffer);
+            this.tradingPanel.Controls.Add(this.traderWoolOffer);
+            this.tradingPanel.Controls.Add(this.traderOreOffer);
+            this.tradingPanel.Controls.Add(this.traderGrainOffer);
+            this.tradingPanel.Controls.Add(this.traderLumbOffer);
+            this.tradingPanel.Controls.Add(this.traderLumQty);
+            this.tradingPanel.Controls.Add(this.traderBrickQty);
+            this.tradingPanel.Controls.Add(this.traderWoolQty);
+            this.tradingPanel.Controls.Add(this.traderOreQty);
+            this.tradingPanel.Controls.Add(this.traderGrainQty);
+            this.tradingPanel.Controls.Add(this.label6);
+            this.tradingPanel.Controls.Add(this.label4);
+            this.tradingPanel.Controls.Add(this.label5);
+            this.tradingPanel.Controls.Add(this.label3);
+            this.tradingPanel.Controls.Add(this.lumberTLabel);
+            this.tradingPanel.Controls.Add(this.tradingPlayerLbl);
+            this.tradingPanel.Controls.Add(this.currentPlayerlbl);
+            this.tradingPanel.Controls.Add(this.acceptButton);
+            this.tradingPanel.Controls.Add(this.button1);
+            this.tradingPanel.Location = new System.Drawing.Point(15, 17);
+            this.tradingPanel.Name = "tradingPanel";
+            this.tradingPanel.Size = new System.Drawing.Size(409, 305);
+            this.tradingPanel.TabIndex = 40;
+            this.tradingPanel.Visible = false;
             // 
             // textBox1
             // 
@@ -806,12 +811,12 @@ namespace SOCForm
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             tradePanel.ResumeLayout(false);
             tradePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dieP2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dieP1)).EndInit();
             this.playerData.ResumeLayout(false);
             this.playerData.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dieP2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dieP1)).EndInit();
+            this.tradingPanel.ResumeLayout(false);
+            this.tradingPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -835,9 +840,9 @@ namespace SOCForm
         private Label label2;
         private Button player2Select;
         private Button player3Select;
-        private Button button2;
+        private Button player4Select;
         private Button player1Select;
-        private Panel panel1;
+        private Panel tradingPanel;
         private TextBox textBox1;
         private TextBox textBox2;
         private TextBox textBox3;

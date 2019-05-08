@@ -18,11 +18,12 @@ namespace SOCForm
 {
     public partial class Form1 : Form
     {
-
+        Players play = new Players(4);
+        PlayerTurns turns = new PlayerTurns();
 
         public Form1(int players, int ai, int difficulty)
         {
-
+            
             InitializeComponent();
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             Gameboard.HexSize = hexSize;
@@ -33,7 +34,9 @@ namespace SOCForm
             Generate();
             dieP1.BackgroundImage = Properties.Resources.one;
             dieP2.BackgroundImage = Properties.Resources.one;
-            Players play = new Players(4);
+            tradeButtonHider(currentPlayer);
+            play.initializePlayerData();
+            
             
         }
 
@@ -141,10 +144,67 @@ namespace SOCForm
            
         }
 
+        private void tradeButtonHider(int currentPlayer)
+        {
+            switch(currentPlayer)
+            {
+                case 1:
+                    player1Select.Enabled = false;
+                    break;
+                case 2:
+                    player2Select.Enabled = false;
+                    break;
+                case 3:
+                    player3Select.Enabled = false;
+                    break;
+                case 4:
+                    player4Select.Enabled = false;
+                    break;
+            }
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             
             fillCardData(1, this);
+        }
+
+        private void player1Select_Click(object sender, EventArgs e)
+        {
+           play.getPlayerTradeeData(this, 1);
+           tradingPanel.Show();
+        }
+
+        private void player2Select_Click(object sender, EventArgs e)
+        {
+            play.getPlayerTradeeData(this, 2);
+            tradingPanel.Show();
+        }
+
+        private void player3Select_Click(object sender, EventArgs e)
+        {
+            play.getPlayerTradeeData(this, 3);
+            tradingPanel.Show();
+        }
+
+        private void player4Select_Click(object sender, EventArgs e)
+        {
+            play.getPlayerTradeeData(this, 4);
+            tradingPanel.Show();
+
+        }
+
+        private void endTurnBtn_Click(object sender, EventArgs e)
+        {
+            tradingPanel.Hide();
+            if (currentPlayer < 4)
+            {
+                currentPlayer++;
+            }
+            else
+            {
+                currentPlayer = 1;
+            }
         }
     }
 }

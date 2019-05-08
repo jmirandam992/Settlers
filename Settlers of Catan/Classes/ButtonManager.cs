@@ -176,6 +176,7 @@ namespace SOCForm.Classes
         {
             Button thisBtn = (Button)sender;
             Buttons[(int)thisBtn.Tag].click();
+            
         }
 
         private void myButton_Click(object sender, EventArgs e)
