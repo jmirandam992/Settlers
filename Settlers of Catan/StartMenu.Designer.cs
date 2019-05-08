@@ -63,6 +63,16 @@
             this.quitBtn.UseVisualStyleBackColor = true;
             this.quitBtn.Click += new System.EventHandler(this.quitBtn_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(166, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 3;
+            // 
             // StartMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -82,5 +92,7 @@
         private System.Windows.Forms.Button startGameBtn;
         private System.Windows.Forms.Button rulesBtn;
         private System.Windows.Forms.Button quitBtn;
+        private System.Windows.Forms.Panel panel1;
+
     }
 }
